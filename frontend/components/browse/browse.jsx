@@ -9,9 +9,9 @@ class Browse extends React.Component{
   constructor(props){
     super(props);
 
-      this.state = {
-        query: this.props.query
-      };
+      // this.state = {
+      //   query: this.props.query
+      // };
 
   }
 
@@ -19,19 +19,19 @@ class Browse extends React.Component{
     this.props.fetchMovies();
   }
 
-  componentDidUpdate(prevProps) {
-    // debugger;
+  // componentDidUpdate(prevProps) {
+  //   // debugger;
 
-    if(this.props.location.search !== prevProps.location.search){
-      let pathname = window.location.href;
-      // debugger
-      if (pathname.includes('search?=')) {
-        this.setState({query: pathname.split('=')[1]});
-      } else {
-        this.setState({ query: "" });
-      }
-    }
-  }
+  //   if(this.props.location.search !== prevProps.location.search){
+  //     let pathname = window.location.href;
+  //     // debugger
+  //     if (pathname.includes('search?=')) {
+  //       this.setState({query: pathname.split('=')[1]});
+  //     } else {
+  //       this.setState({ query: "" });
+  //     }
+  //   }
+  // }
 
   removeAllStylings() {
     const allSpinners = document.getElementsByClassName("spinner");
@@ -51,22 +51,34 @@ class Browse extends React.Component{
     // this.removeAllStylings();
 
     
-    if(this.state.query === ""){
-      return (
-        <div className="browse-container">
-          {/* <div className="logged-header">
-            <NavbarContainer />
-          </div> */}
-            <MoviesIndexContainer />
-        </div>
+    // if(this.state.query === ""){
+    //   return (
+    //     <div className="browse-container">
+    //       {/* <div className="logged-header">
+    //         <NavbarContainer />
+    //       </div> */}
+    //         <MoviesIndexContainer />
+    //     </div>
+    //   );
+    // } else {
+    //   return (
+    //     <div className="browse-container">
+    //       {/* <div className="logged-header">
+    //         <NavbarContainer />
+    //       </div> */}
+    //       <SearchResultsContainer movies={this.props.movies} query={this.state.query}/>
+    //     </div>
+    //   );
+    // }
+
+    if(this.props.movies === undefined){
+      return(
+        <div></div>
       );
     } else {
       return (
         <div className="browse-container">
-          {/* <div className="logged-header">
-            <NavbarContainer />
-          </div> */}
-          <SearchResultsContainer movies={this.props.movies} query={this.state.query}/>
+          <MoviesIndexContainer />
         </div>
       );
     }
