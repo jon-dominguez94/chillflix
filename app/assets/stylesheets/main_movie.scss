@@ -1,0 +1,142 @@
+// Place all the styles related to the api/movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.movies-index {
+  position: relative;
+}
+
+.current-video {
+  width: 100vw;
+}
+
+.browse-container {
+  // position: relative;
+}
+
+.logged-header {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+  transition: background 0.8s linear;
+}
+
+.black-bg {
+  background: #141414;
+}
+
+.main-thumb img {
+  position: relative;
+  z-index: -1;
+}
+
+.main-thumb {
+  // display: inline-block;
+  position: relative;
+  background: linear-gradient(to top, #000, transparent);
+  background: linear-gradient(to top, #141414, transparent);
+  width: 100vw;
+  height: auto;
+  // height: 75vh;
+}
+
+.main-gif {
+  width: 100%;
+  position: relative;
+  content: url('https://s3-us-west-1.amazonaws.com/chillflix-prod/ezgif.com-video-to-gif.gif');
+  z-index: -10;
+}
+.main-video-info {
+  padding-left: 55px;
+  position: absolute;
+  top: 60%;
+  width: 35%;
+  max-width: 450px;
+  transition: top 0.3s;
+  // z-index: 2000;
+}
+
+.main-video-title {
+  font-size: 40px;
+  margin-bottom:25px;
+  white-space: nowrap;
+  transition: font-size 0.3s;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-video-description {
+  margin-top: 15px;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 300px;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.main-video-links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-video-link {
+  margin-right: 10px;
+  padding: 10px 30px;
+  background: rgba(50,50,50,0.35);  
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  border-color: transparent transparent transparent #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus-wrapper {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.main-video-link span {
+  // margin-left: 10px;
+  white-space: nowrap;
+}
+
+.main-video-link:hover {
+  color:black;
+  background: #dddddd;
+  border-color: transparent transparent transparent #202020;
+}
+
+.button.play {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  border-style: solid;
+  border-width: 8px 0px 8px 16px;
+  border-color: inherit;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 755px) {
+  .main-video-description {
+    // display: none !important;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main-video-info {
+    top: 50% !important;
+  }
+  .main-video-title {
+    font-size: 25px !important;
+  }
+
+}
