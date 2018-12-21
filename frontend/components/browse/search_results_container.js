@@ -5,9 +5,9 @@ import { fetchMovies } from '../../actions/movies_actions';
 
 
 const mstp = (state, ownProps) => {
-  let pathname = window.location.href;
+  let pathname = ownProps.location.search;
   let query = "";
-  if (pathname.includes('search?=')) {
+  if (pathname.includes('?=')) {
     query = pathname.split('=')[1];
   }
 
