@@ -28,7 +28,7 @@ const App = () => (
 
       <ProtectedRoute exact path="/browse/:bad" component={MyRedirect} />
       <ProtectedRoute path="/browse/:spinnerId/:movieId/:random" component={MyRedirect} />
-      
+  
       <ProtectedRoute path="/browse" component={BrowseContainer} />
       <ProtectedRoute path="/search" component={SearchResultsContainer} />
       <ProtectedRoute exact path="/watch/:movieId" component={CurrentMovieContainer} />

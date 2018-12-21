@@ -56,8 +56,8 @@ class CurrentMovie extends React.Component {
           className="current-video" 
           width="100vw" 
           height="auto" 
-          // src={this.props.movie.url}
-          src={window.oldvid}
+          src={this.props.movie.url}
+          // src={window.oldvid}
           controls 
           autoPlay
           // ng-src={this.props.movie.url}
