@@ -15,7 +15,9 @@ import CurrentMovieContainer from './movies/current_movie_container';
 const App = () => (
   <div className="overall">
 
-    <NavbarContainer />
+    <div className="logged-header">
+      <NavbarContainer />
+    </div>
 
     <Switch>
       <AuthRoute exact path="/" component={Splash} />

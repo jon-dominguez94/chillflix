@@ -54,18 +54,18 @@ class Browse extends React.Component{
     if(this.state.query === ""){
       return (
         <div className="browse-container">
-          <div className="logged-header">
+          {/* <div className="logged-header">
             <NavbarContainer />
-          </div>
+          </div> */}
             <MoviesIndexContainer />
         </div>
       );
     } else {
       return (
         <div className="browse-container">
-          <div className="logged-header">
+          {/* <div className="logged-header">
             <NavbarContainer />
-          </div>
+          </div> */}
           <SearchResultsContainer movies={this.props.movies} query={this.state.query}/>
         </div>
       );
