@@ -28,6 +28,7 @@ class SearchResults extends React.Component {
       if (pathname.includes('search?=')) {
         const queryString = pathname.split('=')[1];
         const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
+        debugger
         this.setState({
           query: queryString,
           filtered: filteredMovies
