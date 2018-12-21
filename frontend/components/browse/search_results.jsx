@@ -16,7 +16,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    // debugger
+    debugger
     console.log('updated');
     if (this.props.location.search !== prevProps.location.search || this.props.query !== prevProps.query) {
       
