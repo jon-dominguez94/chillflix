@@ -17,7 +17,9 @@ class SearchResults extends React.Component {
 
   componentDidUpdate(prevProps){
     // debugger
+    console.log('updated');
     if (this.props.location.search !== prevProps.location.search || this.props.query !== prevProps.query) {
+      
       let pathname = window.location.href;
       if (pathname.includes('search?=')) {
         const queryString = pathname.split('=')[1];
