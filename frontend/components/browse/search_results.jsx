@@ -5,13 +5,7 @@ class SearchResults extends React.Component {
   constructor(props) {
     super(props);
 
-    // let {pathname} = this.props.location;
-    // let query = pathname.split('=')[1];
-    // alert(props.query);
-
     this.state = {
-      // queryString: props.query,
-      // movies: props.movies,
       filtered: props.movies,
       query: this.props.query
     };

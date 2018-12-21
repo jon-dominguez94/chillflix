@@ -12,6 +12,8 @@ import BrowseContainer from './browse/browse_container';
 import SearchResultsContainer from './browse/search_results_container';
 import CurrentMovieContainer from './movies/current_movie_container';
 
+import MyRedirect from './browse/redirect';
+
 const App = () => (
   <div className="overall">
 
@@ -23,10 +25,13 @@ const App = () => (
       <AuthRoute exact path="/" component={Splash} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-  
+
+      <ProtectedRoute exact path="/browse/:bad" component={MyRedirect} />
+      <ProtectedRoute path="/browse/:spinnerId/:movieId/:random" component={MyRedirect} />
+      
       <ProtectedRoute path="/browse" component={BrowseContainer} />
       <ProtectedRoute path="/search" component={SearchResultsContainer} />
-      <ProtectedRoute path="/watch/:movieId" component={CurrentMovieContainer} />
+      <ProtectedRoute exact path="/watch/:movieId" component={CurrentMovieContainer} />
       {/* <ProtectedRoute path="/list" component={ListContainer} /> */}
       <Redirect to="/"/>
     </Switch>

@@ -22,14 +22,6 @@ const AllVideos = (props) => {
     return a;
   }
 
-  const thumbnails = props.movies.map(movie => {
-    return (
-      // <img src={movie.thumbnail}/>
-      // <img src={window.oldtn}/>
-      <p>{movie.title}</p>
-    );
-  });
-
   let movies1 = Array.from(props.movies);
   let movies2 = Array.from(props.movies);
   let movies3 = Array.from(props.movies);

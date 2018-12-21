@@ -60,6 +60,7 @@ class MovieInfo extends React.Component {
 
   render() {
 
+    this.removeEffects();
     this.addEffects();
 
     if (!this.props.valid) {
@@ -74,7 +75,7 @@ class MovieInfo extends React.Component {
       );
     }
 
-
+    
     return(
       <div className="movie-info-container">
         <div className="attached-info">

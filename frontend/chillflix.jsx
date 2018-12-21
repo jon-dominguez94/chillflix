@@ -12,21 +12,6 @@ window.fetchMovie = movieUtil.fetchMovie;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
-  // window.onclick = function (event) {
-  //   if (!event.target.matches('.spinner-item')) {
-  //     var dropdowns = document.getElementsByClassName("spinner-item");
-  //     var i;
-  //     for (i = 0; i < dropdowns.length; i++) {
-  //       // var openDropdown = dropdowns[i];
-  //       // if (openDropdown.classList.contains('show')) {
-  //       //   openDropdown.classList.remove('show');
-  //       // }
-  //       dropdowns[i].style.border = "4px solid transparent";
-  //     }
-  //   }
-  // };
-
   window.addEventListener("scroll", (e) => {
     const header = document.getElementsByClassName("logged-header");
     if(header.length > 0){
