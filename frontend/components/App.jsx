@@ -9,7 +9,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 
 import BrowseContainer from './browse/browse_container';
-// import SearchResultsContainer from './browse/search_results_container';
+import SearchResultsContainer from './browse/search_results_container';
 import CurrentMovieContainer from './movies/current_movie_container';
 
 const App = () => (
@@ -25,7 +25,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
   
       <ProtectedRoute path="/browse" component={BrowseContainer} />
-      {/* <ProtectedRoute path="/search" component={SearchResultsContainer} /> */}
+      <ProtectedRoute path="/search" component={SearchResultsContainer} />
       <ProtectedRoute path="/watch/:movieId" component={CurrentMovieContainer} />
       {/* <ProtectedRoute path="/list" component={ListContainer} /> */}
       <Redirect to="/"/>

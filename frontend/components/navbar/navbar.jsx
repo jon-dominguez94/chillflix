@@ -25,7 +25,7 @@ class Navbar extends React.Component {
   }
 
   updatePath(e) {
-    this.props.history.push(`/browse/search?=${e.target.value}`);
+    this.props.history.push(`/search?=${e.target.value}`);
     this.setState({queryString: e.target.value});
   }
 
@@ -38,7 +38,7 @@ class Navbar extends React.Component {
   }
 
   expand(){
-    this.props.history.push('/browse/search?=');
+    this.props.history.push('/search?=');
     document.getElementById("search-controls").classList.add('white');
     document.getElementById("search-input").classList.add('not-displayed');
     document.getElementById("search-input").focus();

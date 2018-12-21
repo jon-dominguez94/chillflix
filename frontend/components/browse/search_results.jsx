@@ -12,7 +12,8 @@ class SearchResults extends React.Component {
     this.state = {
       // queryString: props.query,
       // movies: props.movies,
-      filtered: props.movies
+      filtered: props.movies,
+      query: this.props.query
     };
   }
 
@@ -21,10 +22,22 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if(this.props.query !== prevProps.query){
-      const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
-      // alert(filteredMovies);
-      this.setState({filtered: filteredMovies});
+    // debugger
+    if (this.props.location.search !== prevProps.location.search) {
+      let pathname = window.location.href;
+      if (pathname.includes('search?=')) {
+        const queryString = pathname.split('=')[1];
+        const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
+        this.setState({
+          query: queryString,
+          filtered: filteredMovies
+        });
+      } else {
+        this.setState({
+          query: "",
+          filtered: this.props.movies
+         });
+      }
     }
   }
 
