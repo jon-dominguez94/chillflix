@@ -5,11 +5,9 @@ import AllMovies from './all_movies';
 class MoviesIndex extends React.Component {
   constructor(props){
     super(props);
-    // debugger
   }
   
   componentWillMount() {
-    // debugger
     if(this.props.movies.length === 0){
       this.props.fetchMovies();
     }
@@ -33,7 +31,6 @@ class MoviesIndex extends React.Component {
       return (<div></div>);
     }
     const mainMovie = this.props.selectMovie(this.props.movies, "The Comeback");
-    // debugger
     return (
       <div>
         <div className="movies-index">

@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 const mstp = state => {
   return ({
     movies: Object.values(state.entities.movies),
-    // movies: selectAllMovies(state)
     selectMovie: selectMovie
   });
 };
