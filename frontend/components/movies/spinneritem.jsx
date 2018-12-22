@@ -29,15 +29,9 @@ class SpinnerItem extends React.Component {
     // const currDrop = document.getElementById(`info-drop-container-${this.props.order}`);
     // currDrop.classList.add('info-drop-shown');
 
-
-
-
     const currSpinner = document.getElementById(`spinner-${this.props.order}`);
     currSpinner.classList.add('buffed');
-    const currScrolls = document.getElementsByClassName(`scroll-${this.props.order}`);
-    for (let i = 0; i < currScrolls.length; i++) {
-      // currScrolls[i].classList.add('scroll-buffed');
-    }
+ 
     const allPopups = document.getElementsByClassName(`movie-info-container`);
     for (let i = 0; i < allPopups.length; i++) {
       allPopups[i].style.visibility = "visible";
