@@ -17,14 +17,7 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  checkLabel(label){
-    // let current = document.getElementById(label);
-    // if(this.state)
-    // let formInput = 
-  }
-
   update(field, label){
-    // this.checkLabel(label);
     let current = document.getElementById(label);
     return e => {
       this.setState({ [field]: e.target.value });
@@ -72,7 +65,7 @@ class SessionForm extends React.Component {
   }
 
   renderDemo() {
-    if(this.props.formType === "Sign In"){
+    // if(this.props.formType === "Sign In"){
       return(
         <button 
           onClick={
@@ -90,7 +83,7 @@ class SessionForm extends React.Component {
           className="form-input form-btn demo-btn" 
           value="">Demo Login</button>
       );
-    }
+    // }
   }
 
   render() {
@@ -99,7 +92,6 @@ class SessionForm extends React.Component {
 
     return(
       <div className="splash-container with-form">
-        {/* {document.body.style.backgroundImage = "url('https://s3-us-west-1.amazonaws.com/chillflix-dev/bbg.jpeg')"} */}
         <div className="modal">
           <section className="modal-screen">
             <div className="main-header">
@@ -120,14 +112,14 @@ class SessionForm extends React.Component {
                         Email
                         <br/>
                       </label>
-                      <input type="text" value={this.state.email} onChange={this.update("email", "form-label")} onFocus={this.checkLabel("form-label")}/>
+                      <input type="text" value={this.state.email} onChange={this.update("email", "form-label")} />
                     </div>
                     <div className="form-input form-text">
                       <label id="form-label2">
                         Password
                         <br/>
                       </label>
-                      <input type="password" value={this.state.password} onChange={this.update("password", "form-label2")} onFocus={this.checkLabel("form-label2")} />
+                      <input type="password" value={this.state.password} onChange={this.update("password", "form-label2")} />
                     </div>
                     
                     <button className="form-input form-btn" value={this.props.formType}>{this.props.formType}</button>
