@@ -15,14 +15,12 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate(prevProps){
- 
     if(this.props.query !== prevProps.query){
       const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
       this.setState({
         filtered: filteredMovies
       });
     }
-
   }
 
   render() {
