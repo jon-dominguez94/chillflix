@@ -15,25 +15,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    // if (this.props.location.search !== prevProps.location.search) {
-      
-    //   let pathname = window.location.href;
-    //   if (pathname.includes('search?=')) {
-    //     const queryString = pathname.split('=')[1];
-    //     const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
-    //     // debugger
-    //     this.setState({
-    //       query: queryString,
-    //       filtered: filteredMovies
-    //     });
-    //   } else {
-    //     this.setState({
-    //       query: "",
-    //       filtered: this.props.movies
-    //      });
-    //   }
-    // }
-    // alert(this.props.query);
+ 
     if(this.props.query !== prevProps.query){
       const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
       this.setState({
@@ -41,27 +23,6 @@ class SearchResults extends React.Component {
       });
     }
 
-    // if (this.props.location.search !== prevProps.location.search) {
-    //   let pathname = window.location.href;
-    //   if (pathname.includes('search?=')) {
-    //     this.setState({
-    //       query: pathname.split('=')[1],
-    //       filtered: this.props.filtered
-    //   });
-    //   } else {
-    //     this.setState({
-    //       query: "",
-    //       filtered: this.props.filtered
-    //     });
-    //   }
-    // }
-    // if (this.props.query !== prevProps.query) {
-    //   const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
-    //   this.setState({ 
-    //     query: this.props.query,
-    //     filtered: filteredMovies
-    //   });
-    // }
   }
 
   render() {
