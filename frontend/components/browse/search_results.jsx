@@ -41,6 +41,7 @@ class SearchResults extends React.Component {
         </div>
       )
     );
+    
     return (
       <div className="search-results-container">
         {filtered}

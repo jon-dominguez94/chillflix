@@ -113,12 +113,9 @@ class MovieInfo extends React.Component {
             <img src={window.oldtn}/>
             {/* <img className="movie-tn" src={this.props.movie.thumbnail} /> */}
           </div>
-            {/* <div className="info-gradient"></div> */}
-          {/* </img> */}
         </div>
         <div className="info-close" onClick={this.close}>
           <i className="fa fa-close"></i>
-          {/* <span className="close-x">𝖷</span> */}
         </div>
       </div>
     );
