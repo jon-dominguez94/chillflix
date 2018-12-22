@@ -6,8 +6,7 @@ class SearchResults extends React.Component {
     super(props);
 
     this.state = {
-      filtered: props.movies,
-      query: this.props.query
+      filtered: props.movies
     };
   }
 
@@ -16,23 +15,30 @@ class SearchResults extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (this.props.location.search !== prevProps.location.search) {
+    // if (this.props.location.search !== prevProps.location.search) {
       
-      let pathname = window.location.href;
-      if (pathname.includes('search?=')) {
-        const queryString = pathname.split('=')[1];
-        const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
-        // debugger
-        this.setState({
-          query: queryString,
-          filtered: filteredMovies
-        });
-      } else {
-        this.setState({
-          query: "",
-          filtered: this.props.movies
-         });
-      }
+    //   let pathname = window.location.href;
+    //   if (pathname.includes('search?=')) {
+    //     const queryString = pathname.split('=')[1];
+    //     const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
+    //     // debugger
+    //     this.setState({
+    //       query: queryString,
+    //       filtered: filteredMovies
+    //     });
+    //   } else {
+    //     this.setState({
+    //       query: "",
+    //       filtered: this.props.movies
+    //      });
+    //   }
+    // }
+    // alert(this.props.query);
+    if(this.props.query !== prevProps.query){
+      const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
+      this.setState({
+        filtered: filteredMovies
+      });
     }
 
     // if (this.props.location.search !== prevProps.location.search) {
