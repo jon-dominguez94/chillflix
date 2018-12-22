@@ -3,14 +3,6 @@ import Spinner from './spinner';
 
 const AllVideos = (props) => {
 
-  // function shuffle(a) {
-  //   for (let i = a.length - 1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * (i + 1));
-  //     [a[i], a[j]] = [a[j], a[i]];
-  //   }
-  //   return a;
-  // }
-
   function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -24,12 +16,10 @@ const AllVideos = (props) => {
 
   let movies1 = Array.from(props.movies);
   let movies2 = Array.from(props.movies);
-  let movies3 = Array.from(props.movies);
-  let movies4 = Array.from(props.movies);
+
   shuffle(movies1);
   shuffle(movies2);
-  shuffle(movies3);
-  shuffle(movies4);
+
 
   return (
     <div className="spinner-container">
