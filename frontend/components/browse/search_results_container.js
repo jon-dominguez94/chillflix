@@ -5,13 +5,12 @@ import { fetchMovies } from '../../actions/movies_actions';
 
 
 const mstp = (state, ownProps) => {
-  // debugger;
+
   let pathname = ownProps.location.pathname;
   let search = ownProps.location.search;
   let query = "";
   if (pathname === '/search' && search.length > 2) {
     query = search.split('=')[1];
-    // alert(query);
   }
 
   return ({

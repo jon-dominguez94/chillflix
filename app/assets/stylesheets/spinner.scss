@@ -6,7 +6,7 @@
   top: 90%;
   display:flex;
   flex-direction: column;
-  transition:flex 0.3s ease-out;
+  transition: height 0.5s, flex 0.3s ease-out;
   justify-content: flex-start;
   // align-items: flex-start;
 }

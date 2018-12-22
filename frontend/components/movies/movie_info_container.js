@@ -3,7 +3,7 @@ import MovieInfo from './movie_info';
 import { withRouter } from 'react-router-dom';
 
 const mstp = (state, ownProps) => {
-  debugger
+
   const movieId = ownProps.match.params.movieId;
   const spinnerId = ownProps.match.params.spinnerId;
   const movieIds = ownProps.movies.map(movie => movie.id);
@@ -12,7 +12,7 @@ const mstp = (state, ownProps) => {
   const same_spinner = (ownProps.order === spinnerId);
   const valid_spinner = (spinnerId === "1" || spinnerId === "2" || spinnerId === "3" || spinnerId === "4")
   const valid = valid_movie && same_spinner && valid_spinner;
-  // debugger
+
   return ({
     valid,
     valid_movie,
