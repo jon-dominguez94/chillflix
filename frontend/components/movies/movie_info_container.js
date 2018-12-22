@@ -6,8 +6,7 @@ const mstp = (state, ownProps) => {
 
   const movieId = ownProps.match.params.movieId;
   const spinnerId = ownProps.match.params.spinnerId;
-  const movieIds = ownProps.movies.map(movie => movie.id);
-  const has_movie = movieIds.includes(movieId);
+
   const valid_movie = state.entities.movies.hasOwnProperty(movieId);
   const same_spinner = (ownProps.order === spinnerId);
   const valid_spinner = (spinnerId === "1" || spinnerId === "2" || spinnerId === "3" || spinnerId === "4")
