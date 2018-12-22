@@ -11,6 +11,13 @@ class Navbar extends React.Component {
       queryString: ""
     };
 
+    if(props.currentUser !== undefined) {
+      this.username = props.currentUser.email;
+      if (this.username.includes("@")) {
+        this.username = this.username.split("@")[0];
+      }
+    }
+
     this.updatePath = this.updatePath.bind(this);
     this.expand = this.expand.bind(this);
     this.collapse = this.collapse.bind(this);
