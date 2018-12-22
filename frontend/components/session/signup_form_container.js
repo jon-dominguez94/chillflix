@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { signup, receiveErrors } from '../../actions/session_actions';
+import { login, signup, receiveErrors } from '../../actions/session_actions';
 // import { selectAllErrors } from '../../reducers/selectors';
 import { Link } from 'react-router-dom';
 import React from 'react';
@@ -15,6 +15,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = (dispatch, ownProps) => {
   return ({
+    login: user => dispatch(login(user)),
     processForm: user => dispatch(signup(user)),
     clearErrors: () => dispatch(receiveErrors([]))
   });

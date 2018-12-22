@@ -65,23 +65,25 @@ class SessionForm extends React.Component {
   }
 
   renderDemo() {
-    return(
-      <button 
-        onClick={
-          (e) => {
-            e.preventDefault();
+    // if(this.props.formType === "Sign In"){
+      return(
+        <button 
+          onClick={
+            (e) => {
+              e.preventDefault();
 
-            document.getElementById("form-label").style.top = "4px";
-            document.getElementById("form-label").style.fontSize = "10px";
-            document.getElementById("form-label2").style.top = "4px";
-            document.getElementById("form-label2").style.fontSize = "10px";
-            this.setState({ email: 'demo@gmail.com', password: 'password' });
-            this.props.processForm({email: 'demo@gmail.com', password: 'password'});
-          }
-        } 
-        className="form-input form-btn demo-btn" 
-        value="">Demo Login</button>
-    );
+              document.getElementById("form-label").style.top = "4px";
+              document.getElementById("form-label").style.fontSize = "10px";
+              document.getElementById("form-label2").style.top = "4px";
+              document.getElementById("form-label2").style.fontSize = "10px";
+              this.props.login({email: 'demo@gmail.com', password: 'password'});
+              this.setState({ email: 'demo@gmail.com', password: 'password' });
+            }
+          } 
+          className="form-input form-btn demo-btn" 
+          value="">Demo Login</button>
+      );
+    // }
   }
 
   render() {
