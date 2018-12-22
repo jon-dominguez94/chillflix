@@ -17,7 +17,6 @@ class MovieInfo extends React.Component {
   }
 
   addEffects() {
-    // alert("hit");
     let spinnerId = this.props.match.params.spinnerId;
     let movieId = this.props.match.params.movieId;
     
@@ -48,14 +47,11 @@ class MovieInfo extends React.Component {
     this.removeEffects();
     let spinnerId = this.props.match.params.spinnerId;
     
-    // document.getElementsByClassName("movie-info-container")[0].style.display = "none";
     document.getElementsByClassName("movie-info-container")[0].style.visibility = "hidden";
     document.getElementsByClassName("movie-info-container")[0].style.opacity = "0";
     document.getElementsByClassName("movie-info-container")[0].style.height = "0";
     document.getElementById(`spinner-${spinnerId}`).classList.remove('buffed');
-    setTimeout(() => {
-      this.props.history.push('/browse');
-    }, 1000);
+    this.props.history.push('/browse');
 
   }
 

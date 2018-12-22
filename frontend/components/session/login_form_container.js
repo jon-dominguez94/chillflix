@@ -1,10 +1,8 @@
-import { connect } from 'react-redux';
-import SessionForm from './session_form';
-import { Link } from 'react-router-dom';
-import { login, receiveErrors } from '../../actions/session_actions';
-// import { selectAllErrors } from '../../reducers/selectors';
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login, receiveErrors } from '../../actions/session_actions';
+import { Link, withRouter } from 'react-router-dom';
+import SessionForm from './session_form';
 
 const mstp = (state, ownProps) => {
   return ({

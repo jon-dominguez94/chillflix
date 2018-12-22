@@ -6,12 +6,10 @@ class SpinnerItem extends React.Component {
   constructor(props){
     super(props);
 
-    // this.playMovie = this.playMovie.bind(this);
     this.expand = this.expand.bind(this);
   }
 
   expand(e){
-    // e.stopPropagation();
     const allSpinners = document.getElementsByClassName("spinner-item");
     const allCarets = document.getElementsByClassName("expand-down");
     for(let i = 0; i < allSpinners.length; i++){
@@ -80,7 +78,6 @@ class SpinnerItem extends React.Component {
 
 
         <div className="list-adder">
-          {/* <i className="fa fa-plus-circle fa-2x fa_custom"></i> */}
           <div className="tn-plus-wrapper">
             <span>+</span>
           </div>
