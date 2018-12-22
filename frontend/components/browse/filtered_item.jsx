@@ -5,8 +5,8 @@ const FilteredItem = (props) => {
   return(
 
     <div className="filtered-item">
-      {/* <img className="movie-tn" src={props.movie.thumbnail} /> */}
-      <img className="movie-tn" src={window.oldtn} />
+      <img className="movie-tn" src={props.movie.thumbnail} />
+      {/* <img className="movie-tn" src={window.oldtn} /> */}
 
 
       <div className="search-overlay">
