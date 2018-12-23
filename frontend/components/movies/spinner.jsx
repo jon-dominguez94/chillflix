@@ -43,7 +43,7 @@ class Spinner extends React.Component {
   render() {
     return (
       <div id={`spinner-${this.props.order}`} className="spinner">
-        <h1 className="category-header">{this.props.category}</h1>
+        <h1 id={this.props.category.split(' ').join('')} className="category-header">{this.props.category}</h1>
         
         <div id={`scaler-${this.props.order}`} className="tn-scale">
 
