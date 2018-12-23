@@ -53,7 +53,7 @@
   color: lightgrey;
 }
 
-.nav-link-item:active {
+.nav-link-item:active, .nav-link-item:visited {
   font-weight: bolder;
 }
 .session-btn {
@@ -104,6 +104,7 @@
 .nav-link-item {
   padding: 10px;
   white-space: nowrap;
+  font-size: 13px;
 }
 
 .profile-logo {
