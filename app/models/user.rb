@@ -22,18 +22,9 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :profiles,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :Profile
+  has_many :profiles
 
-  has_one :list,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :List
-
-  # has_one_attached :photo
-
+  has_one :list, dependent: :destroy
 
   def password=(password)
     @password = password
