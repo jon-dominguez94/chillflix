@@ -15,7 +15,7 @@ const mstp = (state, ownProps) => {
 
   return ({
     movies: Object.values(state.entities.movies),
-    query: query
+    query: query.toLowerCase()
   });
 };
 

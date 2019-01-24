@@ -93,3 +93,38 @@
   position: relative;
   bottom: 1px;
 }
+
+.with-msg {
+  position: absolute;
+  bottom: -21px;
+  right: -1px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.circle-msg {
+  position: absolute;
+  bottom: -38px;
+  right: -75px;
+  white-space: nowrap;
+  z-index: 1000;
+  color: black;
+  background: white;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.right-list{
+  right: -50px;
+}
+
+.circle-list:hover * {
+  visibility: visible;
+  opacity: 1;
+}

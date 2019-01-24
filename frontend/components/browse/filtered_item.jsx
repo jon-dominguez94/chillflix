@@ -12,11 +12,17 @@ class FilteredItem extends React.Component {
   renderList(){
     if(this.props.onlist){
       return(
-        <div className="circle-list-btn">-</div>
+        <div className="circle-list-btn">-
+          <i className="fa fa-caret-up with-msg"></i>
+          <div className="circle-msg">Remove from my list</div>
+        </div>
       );
     } else {
       return(
-        <div className="circle-list-btn">+</div>
+        <div className="circle-list-btn">+
+          <i className="fa fa-caret-up with-msg"></i>
+          <div className="circle-msg right-list"> Add to my list</div>
+        </div>
       );
     }
   }
