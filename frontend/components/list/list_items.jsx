@@ -41,11 +41,29 @@ class ListItems extends React.Component {
         </div>
       )
     );
-    return (
-      <div className="search-results-container">
-        {filtered}
-      </div>
-    );
+    if(this.state.list_items.length === 0){
+      return(
+        <div className="list-container">
+          <div className="list-header">
+            My List
+          </div>
+          <div className="empty-msg">
+            You haven't added any titles to your list yet
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="list-container">
+          <div className="list-header">
+            My List
+          </div>
+          <div className="search-results-container">
+            {filtered}
+          </div>
+        </div>
+      );
+    }
   }
 }
 
