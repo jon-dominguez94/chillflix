@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 class FilteredItem extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.updateItem = this.updateItem.bind(this);
   }
 
   renderList(){
@@ -16,6 +18,12 @@ class FilteredItem extends React.Component {
         <div className="circle-list-btn">+</div>
       );
     }
+  }
+
+  updateItem(){
+    // if(this.props.onlist){
+
+    // }
   }
 
   render() {
@@ -36,7 +44,7 @@ class FilteredItem extends React.Component {
         </div>
 
         <p className="filter-title">{this.props.movie.title}</p>
-        <div className="circle-list">
+        <div className="circle-list" onClick={this.updateItem}>
           {this.renderList()}
         </div>
       </div>

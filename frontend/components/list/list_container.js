@@ -5,7 +5,7 @@ import ListItems from './list_items';
 
 const mstp = state => {
   return ({
-    movies: Object.values(state.entities.movies),
+    movies: state.entities.movies,
     list_items: Object.values(state.entities.list_items)
   });
 };

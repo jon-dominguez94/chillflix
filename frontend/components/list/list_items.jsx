@@ -19,12 +19,8 @@ class ListItems extends React.Component {
 
   componentWillReceiveProps(newState){
     const indices = newState.list_items.map(item => item.movie_id);
-    const filtered = indices.map(i => {
-      const movies = Object.values(newState.movies);
-      for(let j = 0; j < movies.length; j++){
-        if(movies[j].id === i) return movies[j];
-      }
-    });
+    const filtered = indices.map(i => newState.movies[i]
+    );
     // debugger
     this.setState({
       list_items: filtered
