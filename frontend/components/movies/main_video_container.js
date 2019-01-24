@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import MainVideo from './main_video';
+import { deleteListItem, createListItem } from '../../actions/list_items_actions';
 
 const mstp = (state, ownProps) => {
   const list_ids = Object.values(state.entities.list_items).map(item => item.movie_id);
@@ -12,7 +13,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => {
   return ({
-
+    createListItem: data => dispatch(createListItem(data)),
+    deleteListItem: id => dispatch(deleteListItem(id))
   });
 };
 

@@ -5,6 +5,38 @@ import { Link } from 'react-router-dom';
 class MainVideo extends React.Component {
   constructor(props){
     super(props);
+
+    this.renderButton = this.renderButton.bind(this);
+    this.handleList = this.handleList.bind(this);
+  }
+
+  renderButton(){
+    if(this.props.onlist){
+      return (<i className="fa fa-minus" />); 
+    } else {
+      return (<i className="fa fa-plus" />);
+    }
+  }
+
+  handleList(){
+    if (this.props.onlist) {
+      let itemId;
+      for (let i = 0; i < this.props.list_items.length; i++) {
+        if (this.props.list_items[i].movie_id === this.props.video.id) {
+          itemId = this.props.list_items[i].id;
+        }
+      }
+      this.props.deleteListItem(itemId);
+    } else {
+      const list_id = this.props.list_id;
+      const movie_id = this.props.video.id;
+      this.props.createListItem({
+        list_item: {
+          list_id,
+          movie_id
+        }
+      });
+    }
   }
 
   render() {
@@ -27,10 +59,11 @@ class MainVideo extends React.Component {
               </div>
             </Link>
 
-            <div className="list-btn">
+            <div className="list-btn" onClick={this.handleList}>
               <div className="main-video-link">
                 <div className="plus-wrapper">
-                  <i className="fa fa-plus"></i>
+                  {/* <i className="fa fa-plus"></i> */}
+                  {this.renderButton()}
                   </div>
                 <span>My List</span>
               </div>  
