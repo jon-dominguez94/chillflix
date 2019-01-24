@@ -1,3 +1,11 @@
+export const fetchListItems = () => (
+  $.ajax({
+    method: 'get',
+    url: `api/list_items`,
+    error: err => console.log(err)
+  })
+);
+
 export const fetchListItem = id => (
   $.ajax({
     method: 'get',

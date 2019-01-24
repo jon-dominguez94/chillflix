@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :profiles, only: [:index, :create, :update, :destroy]
     resources :movies, only: [:index, :show]
     resources :lists, only: [:show]
-    resources :list_items, only: [:create, :destroy, :show]
+    resources :list_items, only: [:create, :destroy, :show, :index]
   end
   root to: 'static_pages#root'
 end

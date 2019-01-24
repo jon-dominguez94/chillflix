@@ -7,6 +7,7 @@ import Root from './components/root';
 import * as list_util from './util/list_item_api_util';
 
 window.fetchListItem = list_util.fetchListItem;
+window.fetchListItems = list_util.fetchListItems;
 window.deleteListItem = list_util.deleteListItem;
 window.createListItem = list_util.createListItem;
 

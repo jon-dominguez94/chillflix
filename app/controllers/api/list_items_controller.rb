@@ -12,6 +12,11 @@ class Api::ListItemsController < ApplicationController
     end
   end
 
+  def index
+    @list_items = ListItem.where(:list_id => current_user.list.id)
+    render "api/list_items/index"
+  end
+
   def destroy
     @list_item = ListItem.find(params[:id])
     @list_item.destroy
