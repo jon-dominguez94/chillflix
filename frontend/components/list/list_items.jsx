@@ -48,7 +48,7 @@ class ListItems extends React.Component {
             My List
           </div>
           <div className="empty-msg">
-            <p>You haven't added any titles to your list yet.</p>
+            You haven't added any titles to your list yet.
           </div>
         </div>
       );
@@ -58,7 +58,7 @@ class ListItems extends React.Component {
           <div className="list-header">
             My List
           </div>
-          <div className="search-results-container">
+          <div className="search-results-container for-list">
             {filtered}
           </div>
         </div>
