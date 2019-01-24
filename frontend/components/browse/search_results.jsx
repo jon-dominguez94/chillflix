@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredItem from './filtered_item';
+import FilteredItem from './filtered_item_container';
 
 class SearchResults extends React.Component {
   constructor(props) {

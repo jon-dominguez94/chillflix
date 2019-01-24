@@ -6,6 +6,7 @@ const mstp = (state, ownProps) => {
   const list_ids = Object.values(state.entities.list_items).map(item => item.movie_id);
   return ({
     list_items: Object.values(state.entities.list_items),
+    list_id: state.entities.users[state.session.id].list_id,
     movie: ownProps.movie,
     onlist: list_ids.includes(ownProps.movie.id)
   });

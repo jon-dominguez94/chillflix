@@ -31,7 +31,14 @@ class FilteredItem extends React.Component {
       }
       this.props.deleteListItem(itemId);
     } else {
-      alert('need to add to list');
+      const list_id = this.props.list_id;
+      const movie_id = this.props.movie.id;
+      this.props.createListItem({
+        list_item: {
+          list_id,
+          movie_id
+        }
+      });
     }
   }
 
