@@ -5,6 +5,7 @@ import { createListItem, deleteListItem } from '../../actions/list_items_actions
 const mstp = (state, ownProps) => {
   const list_ids = Object.values(state.entities.list_items).map(item => item.movie_id);
   return ({
+    list_items: Object.values(state.entities.list_items),
     movie: ownProps.movie,
     onlist: list_ids.includes(ownProps.movie.id)
   });

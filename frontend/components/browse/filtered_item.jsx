@@ -6,6 +6,7 @@ class FilteredItem extends React.Component {
     super(props);
     
     this.updateItem = this.updateItem.bind(this);
+    // debugger
   }
 
   renderList(){
@@ -21,9 +22,17 @@ class FilteredItem extends React.Component {
   }
 
   updateItem(){
-    // if(this.props.onlist){
-
-    // }
+    if(this.props.onlist){
+      let itemId;
+      for(let i = 0; i < this.props.list_items.length; i++){
+        if(this.props.list_items[i].movie_id === this.props.movie.id){
+          itemId = this.props.list_items[i].id;
+        }
+      }
+      this.props.deleteListItem(itemId);
+    } else {
+      alert('need to add to list');
+    }
   }
 
   render() {
