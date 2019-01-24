@@ -20,7 +20,6 @@ class ListItems extends React.Component {
   componentWillReceiveProps(newState){
     const indices = newState.list_items.map(item => item.movie_id);
     const filtered = indices.map(i => newState.movies[i]);
-    // debugger
     this.setState({
       list_items: filtered
     });
@@ -31,7 +30,6 @@ class ListItems extends React.Component {
       return (
         <div>
           rerender
-          {alert("empty")}
         </div>
       );
     }
@@ -43,10 +41,8 @@ class ListItems extends React.Component {
         </div>
       )
     );
-    // debugger
     return (
       <div className="search-results-container">
-        {/* {this.state.list_items.map(item => item.title)} */}
         {filtered}
       </div>
     );
