@@ -38,11 +38,11 @@ export const createListItem = data => dispatch => {
 export const deleteListItem = id => dispatch => {
   return APIUtils.deleteListItem(id)
   .then(
-    () => removeListItem(id)
+    () => dispatch(removeListItem(id))
   );
 };
 
 const removeListItem = id => ({
-  REMOVE_LIST_ITEM,
+  type: REMOVE_LIST_ITEM,
   id
 });
