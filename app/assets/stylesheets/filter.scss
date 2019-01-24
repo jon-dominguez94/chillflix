@@ -80,9 +80,9 @@
   align-items: center;
   border-radius: 50%;
   background: rgba(0,0,0, 0.6);
-  // visibility: hidden;
-  // opacity: 0;
-  // transition: visibility 0.3s, opacity 0.3s linear;
+  visibility: hidden;
+  opacity: 0;
+  transition: border-color 0.5s, visibility 0.3s, opacity 0.3s linear;
 }
 
 .circle-list:hover {

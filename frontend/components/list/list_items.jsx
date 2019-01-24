@@ -1,5 +1,5 @@
 import React from 'react';
-import FilteredItem from '../browse/filtered_item';
+import FilteredItem from '../browse/filtered_item_container';
 
 class ListItems extends React.Component {
   constructor(props) {
@@ -19,7 +19,13 @@ class ListItems extends React.Component {
 
   componentWillReceiveProps(newState){
     const indices = newState.list_items.map(item => item.movie_id);
-    const filtered = indices.map(i => newState.movies[i]);
+    const filtered = indices.map(i => {
+      const movies = Object.values(newState.movies);
+      for(let j = 0; j < movies.length; j++){
+        if(movies[j].id === i) return movies[j];
+      }
+    });
+    // debugger
     this.setState({
       list_items: filtered
     });
@@ -38,7 +44,7 @@ class ListItems extends React.Component {
 
       return (
         <div key={movie.id} className="filtered-movie-container">
-          <FilteredItem key={movie.id} movie={movie} onlist='-'/>
+          <FilteredItem key={movie.id} movie={movie}/>
         </div>
       )}
     );
