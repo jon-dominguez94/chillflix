@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import * as list_util from './util/list_item_api_util';
+import * as list_util from './actions/list_items_actions';
 
 window.fetchListItem = list_util.fetchListItem;
 window.fetchListItems = list_util.fetchListItems;
