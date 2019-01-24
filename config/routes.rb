@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    get 'lists/show'
+  end
+  get 'lists/show'
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
     resource :user, only: [:create]

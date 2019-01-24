@@ -11,6 +11,7 @@ import SignupFormContainer from './session/signup_form_container';
 import BrowseContainer from './browse/browse_container';
 import SearchResultsContainer from './browse/search_results_container';
 import CurrentMovieContainer from './movies/current_movie_container';
+import ListContainer from './list/list_container';
 
 import MyRedirect from './browse/redirect';
 
@@ -32,7 +33,7 @@ const App = () => (
       <ProtectedRoute path="/browse" component={BrowseContainer} />
       <ProtectedRoute path="/search" component={SearchResultsContainer} />
       <ProtectedRoute exact path="/watch/:movieId" component={CurrentMovieContainer} />
-      {/* <ProtectedRoute path="/list" component={ListContainer} /> */}
+      <ProtectedRoute path="/list" component={ListContainer} />
       <Redirect to="/"/>
     </Switch>
   </div>
