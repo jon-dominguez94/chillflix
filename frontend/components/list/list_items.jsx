@@ -48,7 +48,7 @@ class ListItems extends React.Component {
             My List
           </div>
           <div className="empty-msg">
-            You haven't added any titles to your list yet
+            <p>You haven't added any titles to your list yet.</p>
           </div>
         </div>
       );

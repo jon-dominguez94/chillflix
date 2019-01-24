@@ -1,3 +1,23 @@
-// Place all the styles related to the Lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.list-container {
+  padding: 0 55px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100px;
+  // justify-content: center;
+}
+
+.list-header {
+  font-size: 32px;
+  font-weight:400;
+  letter-spacing: 1px;
+}
+
+.empty-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: #666;
+  font-size: 18px;
+}
