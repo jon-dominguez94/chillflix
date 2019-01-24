@@ -1,5 +1,5 @@
 import React from 'react';
-import MainVideo from './main_video.jsx';
+import MainVideo from './main_video_container';
 import AllMovies from './all_movies';
 
 class MoviesIndex extends React.Component {
@@ -9,7 +9,10 @@ class MoviesIndex extends React.Component {
   
   componentWillMount() {
     if(this.props.movies.length === 0){
-      this.props.fetchMovies();
+      this.props.fetchMovies()
+      .then(() => 
+        this.props.fetchListItems()
+      );
     }
   }
 

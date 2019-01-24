@@ -12,6 +12,7 @@ class SearchResults extends React.Component {
 
   componentDidMount(){
     this.props.fetchMovies();
+    this.props.fetchListItems();
   }
 
   componentDidUpdate(prevProps){
