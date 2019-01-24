@@ -12,7 +12,7 @@ class MainVideo extends React.Component {
 
   renderButton(){
     if(this.props.onlist){
-      return (<i className="fa fa-minus" />); 
+      return (<i className="fa fa-check" />); 
     } else {
       return (<i className="fa fa-plus" />);
     }

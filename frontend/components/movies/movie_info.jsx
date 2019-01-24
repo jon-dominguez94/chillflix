@@ -6,6 +6,8 @@ class MovieInfo extends React.Component {
     super(props);
 
     this.close = this.close.bind(this);
+    this.renderButton = this.renderButton.bind(this);
+    this.handleList = this.handleList.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +57,35 @@ class MovieInfo extends React.Component {
 
   }
 
+  renderButton() {
+    if (this.props.onlist) {
+      return (<i className="fa fa-check" />);
+    } else {
+      return (<i className="fa fa-plus" />);
+    }
+  }
+
+  handleList() {
+    if (this.props.onlist) {
+      let itemId;
+      for (let i = 0; i < this.props.list_items.length; i++) {
+        if (this.props.list_items[i].movie_id === this.props.movie.id) {
+          itemId = this.props.list_items[i].id;
+        }
+      }
+      this.props.deleteListItem(itemId);
+    } else {
+      const list_id = this.props.list_id;
+      const movie_id = this.props.movie.id;
+      this.props.createListItem({
+        list_item: {
+          list_id,
+          movie_id
+        }
+      });
+    }
+  }
+
   render() {
 
     this.removeEffects();
@@ -71,49 +102,45 @@ class MovieInfo extends React.Component {
     }
 
     
-    return(
-      <div className="movie-info-container">
+    return <div className="movie-info-container">
         <div className="attached-info">
           <div className="popup-controls">
-
             <div className="main-video-info on-popup">
-
               <h1 className="main-video-title">{this.props.movie.title}</h1>
-              <h2 className="main-video-description space-below">{this.props.movie.description}</h2>
+              <h2 className="main-video-description space-below">
+                {this.props.movie.description}
+              </h2>
               <div className="main-video-links">
                 <Link to={`/watch/${this.props.movie.id}`}>
                   <div className="play-btn">
                     <div className="main-video-link info-red">
-                      <button className='button play'></button>
+                      <button className="button play" />
                       <span>PLAY</span>
                     </div>
                   </div>
                 </Link>
 
-                <Link to={"/list"}>
-                  <div className="list-btn">
-                    <div className="main-video-link info-black">
-                      <div className="plus-wrapper">
-                        <i className="fa fa-plus"></i>
-                      </div>
-                      <span>MY LIST</span>
+                <div className="list-btn" onClick={this.handleList}>
+                  <div className="main-video-link info-black">
+                    <div className="plus-wrapper">
+                      {/* <i className="fa fa-plus"></i> */}
+                      {this.renderButton()}
                     </div>
+                    <span>MY LIST</span>
                   </div>
-                </Link>
+                </div>
               </div>
             </div>
-
           </div>
           <div className="drop-info-pic">
-            <img src={window.oldtn}/>
+            <img src={window.oldtn} />
             {/* <img className="movie-tn" src={this.props.movie.thumbnail} /> */}
           </div>
         </div>
         <div className="info-close" onClick={this.close}>
-          <i className="fa fa-close"></i>
+          <i className="fa fa-close" />
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
