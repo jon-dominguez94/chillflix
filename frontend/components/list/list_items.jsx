@@ -34,12 +34,13 @@ class ListItems extends React.Component {
       );
     }
 
-    const filtered = this.state.list_items.map(movie =>
-      (
+    const filtered = this.state.list_items.map(movie => {
+
+      return (
         <div key={movie.id} className="filtered-movie-container">
-          <FilteredItem key={movie.id} movie={movie} />
+          <FilteredItem key={movie.id} movie={movie} onlist='-'/>
         </div>
-      )
+      )}
     );
     if(this.state.list_items.length === 0){
       return(

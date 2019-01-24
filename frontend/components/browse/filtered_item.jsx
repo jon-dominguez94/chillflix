@@ -2,6 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const FilteredItem = (props) => {
+
+  function renderList(){
+    if(props.onlist){
+      return(
+        <div>-</div>
+      );
+    } else {
+      return(
+        <div>+</div>
+      );
+    }
+  }
+
   return(
 
     <div className="filtered-item">
@@ -20,6 +33,7 @@ const FilteredItem = (props) => {
       </div>
 
       <p className="filter-title">{props.movie.title}</p>
+      {renderList()}
     </div>
   );
 };
