@@ -1,5 +1,5 @@
 import React from 'react';
-// import FilteredItem from '../';
+import FilteredItem from '../browse/filtered_item';
 
 class ListItems extends React.Component {
   constructor(props) {
@@ -36,18 +36,18 @@ class ListItems extends React.Component {
       );
     }
 
-    // const filtered = this.state.filtered.map(movie =>
-    //   (
-    //     <div key={movie.id} className="filtered-movie-container">
-    //       <FilteredItem key={movie.id} movie={movie} />
-    //     </div>
-    //   )
-    // );
+    const filtered = this.state.list_items.map(movie =>
+      (
+        <div key={movie.id} className="filtered-movie-container">
+          <FilteredItem key={movie.id} movie={movie} />
+        </div>
+      )
+    );
     // debugger
     return (
       <div className="search-results-container">
-        {this.state.list_items.map(item => item.title)}
-        {/* {filtered} */}
+        {/* {this.state.list_items.map(item => item.title)} */}
+        {filtered}
       </div>
     );
   }
