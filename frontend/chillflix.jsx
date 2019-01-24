@@ -4,9 +4,11 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import * as list_util from './actions/lists_actions';
+import * as list_util from './util/list_item_api_util';
 
-window.fetchList = list_util.fetchList;
+window.fetchListItem = list_util.fetchListItem;
+window.deleteListItem = list_util.deleteListItem;
+window.createListItem = list_util.createListItem;
 
 
 document.addEventListener("DOMContentLoaded", () => {

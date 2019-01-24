@@ -4,7 +4,7 @@ class Api::ListItemsController < ApplicationController
 
   def create
     @list_item = ListItem.new(list_item_params)
-    @list_item.list_id = current_user.list_id
+    @list_item.list_id = current_user.list.id
     if @list_item.save
       render "api/list_items/show"
     else
