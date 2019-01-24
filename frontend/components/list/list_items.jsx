@@ -1,26 +1,26 @@
 import React from 'react';
-import FilteredItem from './filtered_item';
+// import FilteredItem from '../';
 
 class ListItems extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      filtered: props.movies
+      movies: props.movies,
+      list_items: props.list_items
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchMovies();
+    this.props.fetchListItems();
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.query !== prevProps.query) {
-      const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
-      this.setState({
-        filtered: filteredMovies
-      });
-    }
+  componentWillReceiveProps(newState){
+    this.setState({
+      movies: newState.movies,
+      list_items: newState.list_items
+    });
   }
 
   render() {
@@ -28,21 +28,23 @@ class ListItems extends React.Component {
       return (
         <div>
           rerender
+          {alert("empty")}
         </div>
       );
     }
 
-    const filtered = this.state.filtered.map(movie =>
-      (
-        <div key={movie.id} className="filtered-movie-container">
-          <FilteredItem key={movie.id} movie={movie} />
-        </div>
-      )
-    );
+    // const filtered = this.state.filtered.map(movie =>
+    //   (
+    //     <div key={movie.id} className="filtered-movie-container">
+    //       <FilteredItem key={movie.id} movie={movie} />
+    //     </div>
+    //   )
+    // );
 
     return (
       <div className="search-results-container">
-        {filtered}
+        {this.state.list_items.map(item => item.movie_id)}
+        {/* {filtered} */}
       </div>
     );
   }
