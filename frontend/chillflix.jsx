@@ -4,10 +4,9 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import * as movieUtil from './actions/movies_actions';
+import * as list_util from './util/list_api_util';
 
-window.fetchMovies = movieUtil.fetchMovies;
-window.fetchMovie = movieUtil.fetchMovie;
+window.fetchList = list_util.fetchList;
 
 
 document.addEventListener("DOMContentLoaded", () => {
