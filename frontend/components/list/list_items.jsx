@@ -6,20 +6,23 @@ class ListItems extends React.Component {
     super(props);
 
     this.state = {
-      movies: props.movies,
-      list_items: props.list_items
+      list_items: []
     };
   }
 
   componentWillMount() {
-    this.props.fetchMovies();
-    this.props.fetchListItems();
+    this.props.fetchMovies()
+    .then(
+      () => this.props.fetchListItems()
+    );
   }
 
   componentWillReceiveProps(newState){
+    const indices = newState.list_items.map(item => item.movie_id);
+    const filtered = indices.map(i => newState.movies[i]);
+    // debugger
     this.setState({
-      movies: newState.movies,
-      list_items: newState.list_items
+      list_items: filtered
     });
   }
 
@@ -40,10 +43,10 @@ class ListItems extends React.Component {
     //     </div>
     //   )
     // );
-
+    // debugger
     return (
       <div className="search-results-container">
-        {this.state.list_items.map(item => item.movie_id)}
+        {this.state.list_items.map(item => item.title)}
         {/* {filtered} */}
       </div>
     );
