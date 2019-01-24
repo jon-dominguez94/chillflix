@@ -7,6 +7,7 @@ class SpinnerItem extends React.Component {
     super(props);
 
     this.expand = this.expand.bind(this);
+    this.handleList = this.handleList.bind(this);
   }
 
   expand(e){
@@ -49,6 +50,35 @@ class SpinnerItem extends React.Component {
     }
   }
 
+  handleList() {
+    if (this.props.onlist) {
+      let itemId;
+      for (let i = 0; i < this.props.list_items.length; i++) {
+        if (this.props.list_items[i].movie_id === this.props.movie.id) {
+          itemId = this.props.list_items[i].id;
+        }
+      }
+      this.props.deleteListItem(itemId);
+    } else {
+      const list_id = this.props.list_id;
+      const movie_id = this.props.movie.id;
+      this.props.createListItem({
+        list_item: {
+          list_id,
+          movie_id
+        }
+      });
+    }
+  }
+
+  renderButton() {
+    if (this.props.onlist) {
+      return <span>-</span>;
+    } else {
+      return <span>+</span>;
+    }
+  }
+
   render() {
 
 
@@ -71,9 +101,10 @@ class SpinnerItem extends React.Component {
         </div>
 
 
-        <div className="list-adder">
+        <div className="list-adder" onClick={this.handleList}>
           <div className="tn-plus-wrapper">
-            <span>+</span>
+            {/* <span>+</span> */}
+            {this.renderButton()}
           </div>
         </div>
         

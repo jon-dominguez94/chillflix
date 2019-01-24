@@ -1,5 +1,5 @@
 import React from 'react';
-import SpinnerItem from './spinneritem';
+import SpinnerItem from './spinneritem_container';
 import { Route } from 'react-router-dom';
 import MovieInfoContainer from './movie_info_container';
 
