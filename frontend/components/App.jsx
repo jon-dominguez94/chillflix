@@ -33,7 +33,7 @@ const App = () => (
       <ProtectedRoute path="/browse" component={BrowseContainer} />
       <ProtectedRoute path="/search" component={SearchResultsContainer} />
       <ProtectedRoute exact path="/watch/:movieId" component={CurrentMovieContainer} />
-      <ProtectedRoute path="/list" component={ListContainer} />
+      <ProtectedRoute exact path="/list" component={ListContainer} />
       <Redirect to="/"/>
     </Switch>
   </div>
