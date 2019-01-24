@@ -133,8 +133,8 @@ class MovieInfo extends React.Component {
             </div>
           </div>
           <div className="drop-info-pic">
-            <img src={window.oldtn} />
-            {/* <img className="movie-tn" src={this.props.movie.thumbnail} /> */}
+            {/* <img src={window.oldtn} /> */}
+            <img className="movie-tn" src={this.props.movie.thumbnail} />
           </div>
         </div>
         <div className="info-close" onClick={this.close}>

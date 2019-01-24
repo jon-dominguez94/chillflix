@@ -12,7 +12,7 @@ class MainVideo extends React.Component {
 
   renderButton(){
     if(this.props.onlist){
-      return (<i className="fa fa-minus" />); 
+      return (<i className="fa fa-check" />); 
     } else {
       return (<i className="fa fa-plus" />);
     }
@@ -42,8 +42,8 @@ class MainVideo extends React.Component {
   render() {
     return (
       <div className="main-thumb">
-        {/* <div className="main-gif"></div> */}
-        <img src={window.oldtn}/>
+        <div className="main-gif"></div>
+        {/* <img src={window.oldtn}/> */}
         
 
         <div className="main-video-info">
