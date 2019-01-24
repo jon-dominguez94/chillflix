@@ -66,3 +66,30 @@
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
 }
+
+.circle-list {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  border: 0.5px solid #9b9b9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(0,0,0, 0.6);
+  // visibility: hidden;
+  // opacity: 0;
+  // transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.circle-list:hover {
+  border: 2px solid white;
+}
+
+.circle-list-btn {
+  position: relative;
+  bottom: 1px;
+}
