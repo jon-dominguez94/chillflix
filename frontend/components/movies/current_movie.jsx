@@ -45,29 +45,32 @@ class CurrentMovie extends React.Component {
     }
     return(
       
-      <div id="video-container">
-        <video 
-          className="current-video" 
-          width="100vw" 
-          height="auto" 
-          src={this.props.movie.url}
-          // src={window.oldvid}
-          controls 
-          autoPlay
-        >
-          Your browser does not support the video tag.
-        </video>
+          <div className="curr-movie-wrapper">
+            <div id="video-container">
+              <video 
+                className="current-video" 
+                width="100vw" 
+                height="auto" 
+                src={this.props.movie.url}
+                // src={window.oldvid}
+                controls 
+                autoPlay
+              >
+                Your browser does not support the video tag.
+              </video>
 
-        <Link className="nav-link-item" to="/">
-        <div className="back-btn-container">
-          <button className="back-btn" >
-            <i className="fa fa-arrow-left"></i>
-            <span className="back-text">Back to Browse</span>
-          </button>
-        </div>
-        </Link>
-        
-      </div>
+              <Link className="nav-link-item" to="/">
+              <div className="back-btn-container">
+                <button className="back-btn" >
+                  <i className="fa fa-arrow-left"></i>
+                  <span className="back-text">Back to Browse</span>
+                </button>
+              </div>
+              </Link>
+              
+            </div>
+          </div>
+     
 
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
 
 class Navbar extends React.Component {
 
@@ -61,71 +62,76 @@ class Navbar extends React.Component {
       );
     } else {
       return (
-        <div>
-          <div className="main-header">
+        <Switch>
+          <Route path='/watch'></Route>
+          <Route>
             <div>
-              <Link to="/">
-                <img className="main-logo" src="https://fontmeme.com/permalink/181212/c5c4b3134061f86d06de9895b1ea5522.png" border="0" />
-              </Link>
-            </div>
-            <div className="nav-items">
-              <div className="nav-links">
-                <Link className="nav-link-item" to="/">Home</Link>
-                <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
-                <a className="nav-link-item" href="#ComingSoon">Coming Soon</a>
-                <Link className="nav-link-item" to="/list">My List</Link>
-              </div>
-              <div className="nav-controls">
-                  <div className="nav-items wsearch">
+              <div className="main-header">
+                <div>
+                  <Link to="/">
+                    <img className="main-logo" src="https://fontmeme.com/permalink/181212/c5c4b3134061f86d06de9895b1ea5522.png" border="0" />
+                  </Link>
+                </div>
+                <div className="nav-items">
+                  <div className="nav-links">
+                    <Link className="nav-link-item" to="/">Home</Link>
+                    <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
+                    <a className="nav-link-item" href="#ComingSoon">Coming Soon</a>
+                    <Link className="nav-link-item" to="/list">My List</Link>
+                  </div>
+                  <div className="nav-controls">
+                      <div className="nav-items wsearch">
 
-                    <div id="search-controls" className="search-controls">
+                        <div id="search-controls" className="search-controls">
 
-                      <div className="search-btn" onClick={() => this.expand()} >
+                          <div className="search-btn" onClick={() => this.expand()} >
 
-                        <i className="fa fa-search"></i>
-                      </div>
-      
-                      <input id="search-input" type="text" placeholder="Search by title" defaultValue="" onChange={this.updatePath}/>
+                            <i className="fa fa-search"></i>
+                          </div>
+          
+                          <input id="search-input" type="text" placeholder="Search by title" defaultValue="" onChange={this.updatePath}/>
 
-                      <div id="search-closer" className="search-btn search-closer" onClick={() => this.collapse()} >
-                        <i className="fa fa-times"></i>
-                      </div>
-                    </div>
+                          <div id="search-closer" className="search-btn search-closer" onClick={() => this.collapse()} >
+                            <i className="fa fa-times"></i>
+                          </div>
+                        </div>
 
-                    <div className="profile-dropdown" >
-                      <img className="profile-logo" src="https://assets.nflxext.com/ffe/profiles/avatars_v2/32x32/PICON_025.png" alt=""/>
-                      <i className="fa fa-caret-down"></i>
-                    </div>
-                    <div id="my-dropdown" className="dropdown-content" onMouseOver={() => {
-                      const openDropdown = document.getElementById("my-dropdown");
-                      if (!openDropdown.classList.contains('show')) {
-                        openDropdown.classList.add('show');
-                      }
-                    }} onMouseOut={() => {
+                        <div className="profile-dropdown" >
+                          <img className="profile-logo" src="https://assets.nflxext.com/ffe/profiles/avatars_v2/32x32/PICON_025.png" alt=""/>
+                          <i className="fa fa-caret-down"></i>
+                        </div>
+                        <div id="my-dropdown" className="dropdown-content" onMouseOver={() => {
+                          const openDropdown = document.getElementById("my-dropdown");
+                          if (!openDropdown.classList.contains('show')) {
+                            openDropdown.classList.add('show');
+                          }
+                        }} onMouseOut={() => {
+                          const openDropdown = document.getElementById("my-dropdown");
+                          if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                          }
+                        }}>
+                            <section className="drop-item manage-link" >Hello, {this.username}!</section>
+                            <section className="drop-item" onClick={() => this.props.logout()}>Logout of Chillflix</section>
+                          </div>
+                        </div>
+                        <div className="nav-control-wrapper" onMouseOver={() => {
+                          const openDropdown = document.getElementById("my-dropdown");
+                          if (!openDropdown.classList.contains('show')) {
+                            openDropdown.classList.add('show');
+                          }
+                      }} onMouseOut={() => {
                       const openDropdown = document.getElementById("my-dropdown");
                       if (openDropdown.classList.contains('show')) {
                         openDropdown.classList.remove('show');
                       }
-                    }}>
-                        <section className="drop-item manage-link" >Hello, {this.username}!</section>
-                        <section className="drop-item" onClick={() => this.props.logout()}>Logout of Chillflix</section>
-                      </div>
-                    </div>
-                    <div className="nav-control-wrapper" onMouseOver={() => {
-                      const openDropdown = document.getElementById("my-dropdown");
-                      if (!openDropdown.classList.contains('show')) {
-                        openDropdown.classList.add('show');
-                      }
-                  }} onMouseOut={() => {
-                  const openDropdown = document.getElementById("my-dropdown");
-                  if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                  }
-                }}></div>
+                    }}></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </Route>
+        </Switch>
       );
     }
   }
