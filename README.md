@@ -56,54 +56,43 @@ When the expand button is clicked, the videos title and description is shown. Be
 
 ![](./screenshots/info.png)
 
-Also implemented is a reactive search function
-
 ## Feature Highlights
 
-### Handle Enclosures
+### Video Search
 
-There are many things rendering on the board at once so it was difficult to create the game logic. I went through many implementations to figure out when and where orbs were encompassed but I finally landed on the following:
+Implementing the search functionality was quite a challenge. At first, I was trying to combine all the logic into the Navbar since the search bar was there. But it proved to be very difficult to render the results and also track the query string. So I broke up the search functionality into its own component. The search bar on the Navbar updates the route. The search results container monitors the query string and passes in the search to the search results component. Then the search results component takes over the page and renders the videos matching the query. This allows the page to be updated as the query string gets updated.
 
-* Render the players trail
-  * Array of points connected with quadratic curves
-* Check every combination of four points in the trail to see if there are any collisions
-  * At least four points to create a closed circle
-* Save the start index, end index, and collision point
-* Fill that area with a radial-gradient to signify closed circle
-* For each active orb, grab each pixel position on the board
-  * Each orb is its own canvas on top of the original canvas. Therefore, each orb's position on the window has a matching position on the board
-* Check those pixels on the board
-  * If it is clear, do nothing. If it has the color of the radial-gradient, orb has been enclosed so react depending on the orb type
-
-![](./screenshots/playing.png)
+![](./screenshots/search.png)
 
 ```
-for(let i = this.enemies.length - 1; i >= 0; i--){
-  const enemy = this.enemies[i];
-  const ex = Math.round(enemy.x);
-  const ey = Math.round(enemy.y);
+// search_results_container.js
 
-  const indices = [
-    ((ey * bmpw) + Math.round(ex - constants.ENEMY_SIZE)) * 4,
-    ((ey * bmpw) + Math.round(ex + constants.ENEMY_SIZE)) * 4,
-    ((Math.round(ey - constants.ENEMY_SIZE) * bmpw) + ex) * 4,
-    ((Math.round(ey + constants.ENEMY_SIZE) * bmpw) + ex) * 4
-  ];
-  for(j = indices.length - 1; j >= 0; j++){}
-    const index = indices[j];
-    if (pixels[index + 1] >= 0 && pixels[index + 2] >= 200) {
-      if (enemy.type === constants.ENEMY_TYPE_BOMB || enemy.type === constants.ENEMY_TYPE_BOMB_MOVER) {
-        this.handleBombInClosure(enemy);
-      }
-      else {
-        this.handleEnemyInClosure(enemy);
 
-        casualties.push(enemy);
-      }
+const mstp = (state, ownProps) => {
 
-      this.enemies.splice(i, 1);
-      break;
-    }
+  let pathname = ownProps.location.pathname;
+  let search = ownProps.location.search;
+  let query = "";
+  if (pathname === '/search' && search.length > 2) {
+    query = search.split('=')[1];
+  }
+
+  return ({
+    movies: Object.values(state.entities.movies),
+    query: query.toLowerCase()
+  });
+};
+```
+```
+// search_results.jsx
+
+
+componentDidUpdate(prevProps){
+  if(this.props.query !== prevProps.query){
+    const filteredMovies = this.props.movies.filter(movie => movie.title.toLowerCase().includes(this.props.query));
+    this.setState({
+      filtered: filteredMovies
+    });
   }
 }
 ```
