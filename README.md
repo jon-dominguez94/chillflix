@@ -5,13 +5,12 @@
   - [Demo](#demo)
 - [Technologies](#technologies)
 - [Site](#site)
-  - [Landing Page](#landing-page)
-  - [In-Game](#in-game)
-  - [Game Over](#game-over)
+  - [Splash Page](#splash-page)
+  - [Videos](#videos)
+  - [Info](#info)
 - [Feature Highlights](#feature-highlights)
-  - [Handle Enclosures](#handle-enclosures)
-  - [Particles and Notifications](#particles-and-notifications)
-  - [Multiplier](#multiplier)
+  - [Video Search](#video-search)
+  - [Info and Dropdown Effects](#video-info-dropdown-and-effects)
 
 ## Background and Overview
 
@@ -60,7 +59,14 @@ When the expand button is clicked, the videos title and description is shown. Be
 
 ### Video Search
 
-Implementing the search functionality was quite a challenge. At first, I was trying to combine all the logic into the Navbar since the search bar was there. But it proved to be very difficult to render the results and also track the query string. So I broke up the search functionality into its own component. The search bar on the Navbar updates the route. The search results container monitors the query string and passes in the search to the search results component. Then the search results component takes over the page and renders the videos matching the query. This allows the page to be updated as the query string gets updated.
+Implementing the search functionality was quite a challenge. At first, I was trying to combine all the logic into the Navbar since the search bar was there. But it proved to be very difficult to render the results and also track the query string. So I came to this solution:
+* Search functionality was spread over two components
+* The search bar on the Navbar component would expand when clicked on
+  * Once the user starts typing, the route would be updated with the query string
+* Once the route changed to a search, the search results container would monitor the query string, passing it as a prop to the search results
+* Search results component would filter out the movies in state, non case-sensitive and display them
+  * An empty query string would return all videos
+* If the 'X' was clicked, the search bar would contract and the user would be rerouted back to browse
 
 ![](./screenshots/search.png)
 
@@ -99,7 +105,7 @@ componentDidUpdate(prevProps){
 
 ### Video Info Dropdown and Effects
 
-When a movie's dropdown is expanded, it's info is supposed to show the video's title, description, control buttons, and a close button. Also, the current video with expanded info should be highlighted white a white border and a downwards caret pointing to the info. The challenging part with this feature was what to do if one dropdown is already open and another one dropdown is clicked. At first both dropdowns would show and both would have the highlight effects. The solution I came to was the following:
+When a movie's dropdown is expanded, it's info is supposed to show the video's title, description, control buttons, and a close button. Also, the current video with expanded info should be highlighted white a white border and a downwards caret pointing to the info. The challenging part with this feature was what to do if one dropdown is already open and the user attempts to expand another one. At first both dropdowns would show and both would have the highlight effects. The solution I came to was the following:
 * When a dropdown is expanded, update the route to have wildcards for the id of the scroll wheel and the id of the movie
 * Upon reaching the proper route, remove all effects from each video and allow each video to be enlarged upon hover to show controls
 * Find the matching id's
