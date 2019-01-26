@@ -15,20 +15,25 @@
 
 ## Background and Overview
 
-Hoop is a simple but addictive game. The main focus of the game is to use your mouse/touchscreen to draw a hoop around blue orbs on the board while avoiding red orbs. Hooping around the blue orb will increase your score, multiplier, and replenish your health. Hooping around red orbs will decrease your health and reset your multiplier.
+Chillflix is a clone of the video-streaming site, Netflix. On this site, users are able to create new accounts and login and watch short clips of popular movies and shows.
 
-The longer you survive, the faster objects will show up. Each object has a certain lifetime and will disappear when it expires. Blue will flash before disappearing as an alert so you can give those priority. Allowing blue orbs to die will reset your multiplier and decrease your health.
-
-The traced mouse trail will only last a certain amount of time before fading away. Objects must be fully encompassed with an active trail to count. Hooping around multiple friendlies with the same hoop will result in a bonus.
-
-Play until your health is depleted!
+Features cloned from Netflix include:
+* User authentication
+* Featured video preview
+* Video categories
+* Infinite scroll wheel
+* Video controls on hover
+* Video info dropdown
+* My List
+* Search functionality
+* Video playback
 
 ### Demo
 [Live Link](https://flix-n-chill.herokuapp.com/#/)
 
 ## Technologies
 
-Hoop was built with pure `Javascript` and no external libraries. All game rendering and styling was done with `HTML5 Canvas`
+Chillflix was built on a `Ruby on Rails` backend with a `React/Redux` front end. User data such as login and list information was stored in a `PostgreSQL` database. Videos and thumbnails were stored and accessed through `AWS S3`. 
 
 ## Site
 
