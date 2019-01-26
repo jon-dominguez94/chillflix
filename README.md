@@ -39,29 +39,24 @@ Chillflix was built on a `Ruby on Rails` backend with a `React/Redux` front end.
 
 ### Splash Page
 
-Hoop is currently working on all modern browsers, as well as iOS and Android. However, mobile versions start in the muted mode.
+The Chillflix splash page/auth is an exact clone of the Netflix. It features the same background, fonts, and effects. The user auth forms have the same shrink effects and colors/errors match.
 
 ![](./screenshots/splash.png)
-
-### User Auth
-
-While playing, fully drawn hoops by the user will highlight with the game theme color. Notifications will show for points, health depletion, and multipliers
-
 ![](./screenshots/auth.gif)
 
 ### Videos
 
-Upon game death, the menu will reappear with your score and buttton to start a new game
+Chillflix videos are featured on scroll wheels according to their categories. Scroll wheels feature infinite scroll. Upon hovering over a single video, controls for that video appear. The controls include a play button, an add to my list button, and an expand button which displays more info on the video.
 
 ![](./screenshots/hover.png)
 
 ### Info
 
-Upon game death, the menu will reappear with your score and buttton to start a new game
+When the expand button is clicked, the videos title and description is shown. Below the description, there is a play button and my list button. There is also a button to close the info. When a video's info is expanded, the video is highlighted with a white border and arrow
 
 ![](./screenshots/info.png)
 
-
+Also implemented is a reactive search function
 
 ## Feature Highlights
 
