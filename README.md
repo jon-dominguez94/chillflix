@@ -52,7 +52,7 @@ Chillflix videos are featured on scroll wheels according to their categories. Sc
 
 ### Info
 
-When the expand button is clicked, the videos title and description is shown. Below the description, there is a play button and my list button. There is also a button to close the info. When a video's info is expanded, the video is highlighted with a white border and arrow
+When the expand button is clicked, the videos title and description is shown. Below the description, there is a play button and my list button. There is also a button to close the info. When a video's info is expanded, the video is highlighted with a white border and down-caret
 
 ![](./screenshots/info.png)
 
@@ -97,102 +97,44 @@ componentDidUpdate(prevProps){
 }
 ```
 
-### Particles and Notifications
+### Video Info Dropdown and Effects
 
-Whenever something happens in the game, there is a notification. It can vary between adding to the score, losing health, high score increase, and more. Also, when blue orbs are encompassed, an explosion animation is played. At first, it was different to implement because I was rendering everything on one canvas. But in adding this feature, I refactored to have all orbs as their own canvas leading to a much easier implementation of notifications and particles.
+When a movie's dropdown is expanded, it's info is supposed to show the video's title, description, control buttons, and a close button. Also, the current video with expanded info should be highlighted white a white border and a downwards caret pointing to the info. The challenging part with this feature was what to do if one dropdown is already open and another one dropdown is clicked. At first both dropdowns would show and both would have the highlight effects. The solution I came to was the following:
+* When a dropdown is expanded, update the route to have wildcards for the id of the scroll wheel and the id of the movie
+* Upon reaching the proper route, remove all effects from each video and allow each video to be enlarged upon hover to show controls
+* Find the matching id's
+  * If non-existent, reroute to `/browse`
+  * If it does exist, remove enlarge capability and add effects
 
-* Most notifications inherit the x and y values from object that triggered them
-  * This allowed me to render them exactly where the event occurred
-* Every framerate, I decrease the notifications y-value to give it an effect of bubbling up
-
-* Particles also inherit x and y values
-* However, they are also given a random x and y velocity
-* Every framerate, they get updated positions based on their velocities and eventually fade out
-
-![](./screenshots/active.png)
+![](./screenshots/info.png)
 
 ```
-renderNotifications() {
-  for(let i = this.notifications.length - 1; i >= 0; i--){
-    const notification = this.notifications[i];
-
-    // Make the text float upwards
-    notification.y -= 0.4;
-
-    let radius = 14 * notification.scale;
-    this.context.save();
-    this.context.font = 'bold ' + Math.round(12 * notification.scale) + "px Arial";
-
-    this.context.beginPath();
-    this.context.fillStyle = 'rgba(0,0,0,' + (0.7 * notification.alpha) + ')';
-    this.context.arc(notification.x, notification.y, radius, 0, Math.PI * 2, true);
-    this.context.fill();
-
-    this.context.fillStyle = "rgba( " + notification.rgb[0] + ", " + notification.rgb[1] + ", " + notification.rgb[2] + ", " + notification.alpha + " )";
-    this.context.fillText(notification.text, notification.x - (this.context.measureText(notification.text).width * 0.5), notification.y + (4 * notification.scale));
-    this.context.restore();
-
-    // Fade out
-    notification.alpha *= 1 - (0.08 * (1 - ((notification.alpha - 0.08) / 1)));
-
-    // If the notifaction is faded out, remove it
-    if (notification.alpha < 0.05) {
-      this.notifications.splice(i, 1);
+addEffects() {
+    let spinnerId = this.props.match.params.spinnerId;
+    let movieId = this.props.match.params.movieId;
+    
+    const current = document.getElementById(`spinner-${spinnerId}-${movieId}`);
+    if(current !== null) {
+      current.style.border = "4px solid white";
+      current.classList.remove('enlarge');
+      document.getElementById(`spinner-${spinnerId}`).classList.add('buffed');
     }
-
-    radius += 2;
-
-    this.invalidate(notification.x - radius, notification.y - radius, radius * 2, radius * 2);
+    const caret = document.getElementById(`expand-${spinnerId}-${movieId}`);
+    if(caret !== null){
+      caret.style.display = "block";
+    }
   }
-}
-```
 
-### Multiplier
-
-I wanted the multiplier to gradually step up before increasing to the next level. The logic behind it wasn't difficult but the rendering was a little tricky to come up with but the implementation was simple and clean.
-
-* Render empty black circles for each possible multiplier
-* Set fill and shadow styles
-* Check if the multiplier has reached a full step
-  * If so, fill in the entire circle
-  * Else, fill in the circle but adjust the radius by multiplying by the step
-
-![](./screenshots/mult.png)
-
-```
-while (let i = constants.MULTIPLIER_LIMIT - 1; i >= 0; i--) {
-  this.context.save();
-  this.context.beginPath();
-
-  const x = 6 + (i / constants.MULTIPLIER_LIMIT) * 80;
-  const y = 5;
-  const radius = 6;
-
-  this.context.fillStyle = 'rgba(40,40,40,0.8)';
-  this.context.arc(x, y, radius, 0, Math.PI * 2, true);
-  this.context.fill();
-
-  if (i < this.multiplier.major) {
-    this.context.beginPath();
-    this.context.shadowOffsetX = 0;
-    this.context.shadowOffsetY = 0;
-    this.context.shadowBlur = 14;
-    this.context.shadowColor = "rgba(255,0,255, 0.9)";
-    this.context.fillStyle = "rgba(255,0,255, 0.9)";
-
-    // fully filled circle
-    if (i < this.multiplier.major - 1) {
-      this.context.arc(x, y, radius, 0, Math.PI * 2, true);
+  removeEffects() {
+    const allSpinners = document.getElementsByClassName("spinner-item");
+    const allCarets = document.getElementsByClassName("expand-down");
+    for (let i = 0; i < allSpinners.length; i++) {
+      allSpinners[i].style.border = "0";
+      allSpinners[i].classList.add('enlarge');
+      allCarets[i].style.display = "none";
     }
-    // partially filled
-    else {
-      this.context.fillStyle = "rgba(255,0,255," + 0.8 * this.multiplier.minor + ")";
-      this.context.arc(x, y, radius * this.multiplier.minor, 0, Math.PI * 2, false);
-    }
-    this.context.fill();
   }
-  this.context.restore();
-}
 ```
+
 
 [Back to Top](#)
