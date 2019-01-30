@@ -4,6 +4,7 @@ import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import NavbarContainer from './navbar/navbar_container';
+import FooterContainer from './navbar/footer_container';
 import Splash from './session/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -54,6 +55,11 @@ const App = () => (
         <div className="fa fa-linkedin social" />
       </a>
     </div>
+
+    {/* <div className="logged-footer">
+      <FooterContainer />
+    </div> */}
+
   </div>
 );
 
