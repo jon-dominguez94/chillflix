@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.nav-links{
+  padding-top: 7px;
+}
+
 .nav-controls {
   position: relative;
 }
@@ -31,14 +35,20 @@
 
 .main-header {
   justify-content: space-between;
-  align-items: center;
-  padding: 0 30px 0 50px;
+  align-items: flex-start;
+  padding: 10px 30px 0 50px;
   width: 100%;
 }
 
+.head-logged {
+  // padding-top: 10px;
+}
+
 .main-logo {
-  width: 160px;
-  height: 65px;
+  // width: 135px;
+  // height: 55px;
+  width: 150px;
+  height: 60px;
   /* margin-left: 50px; */
   z-index: 2;
 }
@@ -47,6 +57,7 @@
   justify-content: space-between;
   align-items: center;
   width: 85%;
+  padding-top: 3px;
 }
 
 .nav-items * {
@@ -69,6 +80,7 @@
 
 .signin {
   box-sizing: border-box;
+  margin-top: 7px;
 }
 
 .signup-container {

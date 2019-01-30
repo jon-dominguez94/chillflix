@@ -66,7 +66,7 @@ class Navbar extends React.Component {
           <Route path='/watch'></Route>
           <Route>
             <div>
-              <div className="main-header">
+              <div className="main-header head-logged">
                 <div>
                   <Link to="/">
                     <img className="main-logo" src="https://fontmeme.com/permalink/181212/c5c4b3134061f86d06de9895b1ea5522.png" border="0" />
