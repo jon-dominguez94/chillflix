@@ -2,12 +2,13 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   color: #999;
   z-index: 5;
+  padding: 20px;
 }
 
 .footer > div {
@@ -74,5 +75,5 @@
 }
 
 .footer-prof div {
-  margin-right: 10px;
+  margin-right: 20px;
 }
