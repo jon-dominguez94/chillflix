@@ -44,7 +44,7 @@ const App = () => (
       <Redirect to="/" />
     </Switch>
 
-    <div className="footer">
+    {/* <div className="footer">
       <div>
         Created by <a className="go-white" href="http://jondoom.com">Jon Dominguez</a>
       </div>
@@ -54,7 +54,7 @@ const App = () => (
       <a href="https://www.linkedin.com/in/jondominguez94/">
         <div className="fa fa-linkedin social" />
       </a>
-    </div>
+    </div> */}
 
     {/* <div className="logged-footer">
       <FooterContainer />
