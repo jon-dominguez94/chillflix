@@ -1,5 +1,7 @@
 import React from 'react';
 import Spinner from './spinner';
+import FooterContainer from "../navbar/footer_container";
+
 
 const AllVideos = (props) => {
 
@@ -27,7 +29,11 @@ const AllVideos = (props) => {
       <Spinner category="Popular on Chillflix" movies={movies1.slice(8)} order="2"/>
       <Spinner category="Chill Night" movies={shuffle(movies2).slice(0,8)} order="3"/>
       <Spinner category="Coming Soon" movies={shuffle(movies2).slice(8)} order="4"/>
+      <div className="logged-footer">
+        <FooterContainer />
+      </div>
     </div>
+    
   );
 };
 
