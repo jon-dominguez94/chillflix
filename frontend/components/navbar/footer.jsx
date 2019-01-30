@@ -25,6 +25,18 @@ const Footer = props => {
           <div>Chillflix Originals</div>
         </div>
       </div>
+
+      <div className="footer-prof">
+        <div>
+          Created by <a className="go-white" href="http://jondoom.com">Jon Dominguez</a>
+        </div>
+        <a href="https://github.com/jon-dominguez94">
+          <div className="fa fa-github social" />
+        </a>
+        <a href="https://www.linkedin.com/in/jondominguez94/">
+          <div className="fa fa-linkedin social" />
+        </a>
+      </div>
     </div>
   );
 };
