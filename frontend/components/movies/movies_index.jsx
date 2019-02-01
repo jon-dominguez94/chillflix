@@ -33,12 +33,24 @@ class MoviesIndex extends React.Component {
     if(this.props.movies.length === 0){
       return (<div></div>);
     }
+
     const mainMovie = this.props.selectMovie(this.props.movies, "Game of Thrones");
+    const indices = this.props.list_items.map(item => item.movie_id);
+    // debugger
+    const filtered = indices.map(i => 
+      // {
+      // for(let j = 0; j < this.props.movies.length; j++){
+      //   if(this.props.movies[j].id === i){
+      //     return this.props.movies[j];
+      //   }
+      // }
+      this.props.movies[i - 1]
+    );
     return (
       <div>
         <div className="movies-index">
           <MainVideo video={mainMovie} />
-          <AllMovies movies={this.props.movies} />
+          <AllMovies list_movies={filtered} movies={this.props.movies} />
         </div>
       </div>
     );

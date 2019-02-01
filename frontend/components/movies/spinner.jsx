@@ -4,14 +4,16 @@ import { Route } from 'react-router-dom';
 import MovieInfoContainer from './movie_info_container';
 
 class Spinner extends React.Component {
-
+  
   constructor(props) {
     super(props);
 
     const movies = props.movies.map(movie => {
-      return (
-        <SpinnerItem key={movie.id} movie={movie} order={props.order}/>
-      );
+      if(movie){
+        return (
+          <SpinnerItem key={movie.id} movie={movie} order={props.order}/>
+        );
+      }
     });
 
     this.state = {

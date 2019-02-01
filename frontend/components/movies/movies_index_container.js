@@ -6,10 +6,12 @@ import { selectMovie } from '../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 
 const mstp = state => {
-  return ({
+  return {
+    // movies: state.entities.movies,
     movies: Object.values(state.entities.movies),
-    selectMovie: selectMovie
-  });
+    selectMovie: selectMovie,
+    list_items: Object.values(state.entities.list_items)
+  };
 };
 
 const mdtp = dispatch => {
