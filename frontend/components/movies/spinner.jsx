@@ -26,6 +26,22 @@ class Spinner extends React.Component {
 
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps !== this.props){
+      const movies = this.props.movies.map(movie => {
+        if (movie) {
+          return (
+            <SpinnerItem key={movie.id} movie={movie} order={this.props.order} />
+          );
+        }
+      });
+
+      this.setState({
+        movies: movies
+      });
+    }
+  }
+
   scroll(direction) {
     let newMovies = Array.from(this.state.movies);
     if(direction === "left"){

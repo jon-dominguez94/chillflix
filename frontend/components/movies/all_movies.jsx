@@ -35,9 +35,9 @@ const AllVideos = (props) => {
     <div className="spinner-container">
       {renderList()}
       <Spinner category="Recently Added" movies={movies1.slice(0,8)} order="1"/>
-      <Spinner category="Popular on Chillflix" movies={movies1.slice(8)} order="2"/>
+      {/* <Spinner category="Popular on Chillflix" movies={movies1.slice(8)} order="2"/>
       <Spinner category="Chill Night" movies={shuffle(movies2).slice(0,8)} order="3"/>
-      <Spinner category="Coming Soon" movies={shuffle(movies2).slice(8)} order="4"/>
+      <Spinner category="Coming Soon" movies={shuffle(movies2).slice(8)} order="4"/> */}
       <div className="logged-footer">
         <FooterContainer />
       </div>

@@ -46,6 +46,7 @@ class MoviesIndex extends React.Component {
       // }
       this.props.movies[i - 1]
     );
+    // alert(filtered);
     return (
       <div>
         <div className="movies-index">
