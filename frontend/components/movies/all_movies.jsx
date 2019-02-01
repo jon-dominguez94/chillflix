@@ -26,7 +26,7 @@ const AllVideos = (props) => {
   function renderList(){
     if(props.list_movies.length){
       return (
-        <Spinner category="My List" movies={movies3} order="5" />
+        <Spinner category="My List" movies={movies3} order="1" />
       );
     }
   }
@@ -34,10 +34,10 @@ const AllVideos = (props) => {
   return (
     <div className="spinner-container">
       {renderList()}
-      <Spinner category="Recently Added" movies={movies1.slice(0,8)} order="1"/>
-      {/* <Spinner category="Popular on Chillflix" movies={movies1.slice(8)} order="2"/>
-      <Spinner category="Chill Night" movies={shuffle(movies2).slice(0,8)} order="3"/>
-      <Spinner category="Coming Soon" movies={shuffle(movies2).slice(8)} order="4"/> */}
+      <Spinner category="Recently Added" movies={movies1.slice(0,8)} order="2"/>
+      <Spinner category="Popular on Chillflix" movies={movies1.slice(8)} order="3"/>
+      <Spinner category="Chill Night" movies={shuffle(movies2).slice(0,8)} order="4"/>
+      <Spinner category="Coming Soon" movies={shuffle(movies2).slice(8)} order="5"/>
       <div className="logged-footer">
         <FooterContainer />
       </div>
