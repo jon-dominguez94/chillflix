@@ -16,7 +16,7 @@ const mstp = (state, ownProps) => {
 
   const valid_movie = state.entities.movies.hasOwnProperty(movieId);
   const same_spinner = (ownProps.order === spinnerId);
-  const valid_spinner = (spinnerId === "1" || spinnerId === "2" || spinnerId === "3" || spinnerId === "4")
+  const valid_spinner = (spinnerId === "1" || spinnerId === "2" || spinnerId === "3" || spinnerId === "4" || spinnerId === "5")
   const valid = valid_movie && same_spinner && valid_spinner;
   // debugger
   // alert(movieId);
