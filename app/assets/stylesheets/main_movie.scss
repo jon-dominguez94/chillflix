@@ -72,7 +72,7 @@
 }
 
 .main-video-title {
-  font-size: 20px;
+  font-size: 25px;
   // margin-bottom:25px;
   white-space: nowrap;
   transition: font-size 0.3s;
@@ -138,7 +138,7 @@
 
 
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 890px) {
   .main-video-description {
     // display: none !important;
     visibility: hidden;
@@ -151,7 +151,7 @@
     top: 50% !important;
   }
   .main-video-title {
-    font-size: 10px !important;
+    font-size: 20px !important;
   }
 
 }
