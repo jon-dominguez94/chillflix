@@ -41,7 +41,19 @@
   // height: 75vh;
 }
 
-.got-logo{}
+.got-logo{
+  min-width: 220px;
+  margin: 10px 0 20px 0;
+}
+
+.original {
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.original span {
+  font-weight: 700;
+}
 
 .main-gif {
   width: 100%;
@@ -60,12 +72,12 @@
 }
 
 .main-video-title {
-  font-size: 40px;
-  margin-bottom:25px;
+  font-size: 20px;
+  // margin-bottom:25px;
   white-space: nowrap;
   transition: font-size 0.3s;
-  // font-family: 'Game of Thrones';
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  // font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .main-video-description {
@@ -139,7 +151,7 @@
     top: 50% !important;
   }
   .main-video-title {
-    font-size: 25px !important;
+    font-size: 10px !important;
   }
 
 }
