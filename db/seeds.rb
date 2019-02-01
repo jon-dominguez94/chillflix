@@ -106,6 +106,11 @@ movie10.thumbnail.attach({io: open('https://s3-us-west-1.amazonaws.com/chillflix
 movie10.video.attach({io: open('https://s3-us-west-1.amazonaws.com/chillflix-prod/vids/ss.mp4'), filename: 'ss.mp4'})
 movie10.save!
 
+movie17 = Movie.new({ title: 'Game of Thrones', description: 'Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years.' })
+movie17.thumbnail.attach({io: open('https://s3-us-west-1.amazonaws.com/chillflix-prod/tn/got.png'), filename: 'got.png'})
+movie17.video.attach({io: open('https://s3-us-west-1.amazonaws.com/chillflix-prod/got.mp4'), filename: 'got.mp4'})
+movie17.save!
+
 # movie1.thumbnail.attach({io: EzDownload.open('https://s3-us-west-1.amazonaws.com/chillflix-dev/oldtn.png'), filename: 'oldtn.png'})
 # movie1.video.attach({io: EzDownload.open('https://s3-us-west-1.amazonaws.com/chillflix-dev/commercial.mp4'), filename: 'old.mp4'})
 # movie1.thumbnail.attach({io: File.open('/Users/jondominguez/Desktop/assets/oldtn.png'), filename: 'oldtn.png'})

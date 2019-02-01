@@ -51,8 +51,8 @@ class FilteredItem extends React.Component {
   render() {
     return(
       <div className="filtered-item">
-        <img className="movie-tn" src={this.props.movie.thumbnail} />
-        {/* <img className="movie-tn" src={window.oldtn} /> */}
+        {/* <img className="movie-tn" src={this.props.movie.thumbnail} /> */}
+        <img className="movie-tn" src={window.oldtn} />
 
 
         <div className="search-overlay">
