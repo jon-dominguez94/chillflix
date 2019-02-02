@@ -100,6 +100,8 @@
 
 .space-below {
   margin-bottom: 20px;
+  visibility: visible;
+    opacity: 1;
 }
 
 .info-red, .info-red:hover {
@@ -135,6 +137,10 @@
 
 .info-black, .info-red {
   border-radius: 1px;
+}
+
+.on-popup {
+    top: 10% !important;
 }
 
 @media screen and (max-width: 755px) {
