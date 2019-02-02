@@ -74,6 +74,9 @@ class MovieInfo extends React.Component {
         }
       }
       this.props.deleteListItem(itemId);
+      if (this.props.match.params.spinnerId === '1'){
+        this.close();
+      }
     } else {
       const list_id = this.props.list_id;
       const movie_id = this.props.movie.id;
