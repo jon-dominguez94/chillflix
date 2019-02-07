@@ -72,10 +72,15 @@ class SpinnerItem extends React.Component {
   }
 
   renderButton() {
+    // if (this.props.onlist) {
+    //   return <span>-</span>;
+    // } else {
+    //   return <span>+</span>;
+    // }
     if (this.props.onlist) {
-      return <span>-</span>;
+      return (<i className="fa fa-check" />);
     } else {
-      return <span>+</span>;
+      return (<i className="fa fa-plus" />);
     }
   }
 
