@@ -204,7 +204,7 @@
   height: 40px;
   padding-top: 9px;
   padding-left: 4px;
-  border: 2px solid #fff;
+  border: 2px solid #aaa;
   border-radius: 50%;
   color: red;
   text-align: center;
@@ -214,8 +214,9 @@
 }
 
 .round-button:hover {
-  width: 42px;
-  height: 42px;
+  // width: 42px;
+  // height: 42px;
+  border-color: #fff;
 }
 
 .tn-title {
