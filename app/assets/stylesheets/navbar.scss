@@ -12,6 +12,11 @@
   padding-top: 7px;
 }
 
+.ham-nav-links {
+  display: flex;
+  flex-direction: column;
+}
+
 .nav-controls {
   position: relative;
 }
