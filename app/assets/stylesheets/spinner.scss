@@ -237,14 +237,14 @@
 .tn-plus-wrapper {
   width: 30px;
   height: 30px;
-  // padding: 4px 0 10px 0;
+  padding: 4px 0 10px 0;
   border: 0.5px solid rgb(155, 155, 155);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  // font-size: 25px;
-  font-weight: 100;
+  font-size: 25px;
+  font-weight: 200;
   background: rgba(0, 0, 0, 0.5);
   transition: background 0.3s, border-color 0.3s linear;
 }
