@@ -74,7 +74,7 @@ class Navbar extends React.Component {
                 </div>
                 <div className="nav-items">
 
-                  <div className="nav-links">
+                  <div className="nav-links regular">
                     <Link className="nav-link-item" to="/">Home</Link>
                     <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
                     <a className="nav-link-item" href="#ComingSoon">Coming Soon</a>
