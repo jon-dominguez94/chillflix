@@ -54,6 +54,12 @@ class Navbar extends React.Component {
     document.getElementById("search-closer").classList.add('close-width');
   }
 
+  showHamburger(){
+    const links = document.getElementsByClassName('in-hamburger')[0];
+    console.log(links.style.display);
+    links.style.display = links.style.display === 'none' || links.style.display === ''  ? 'flex' : 'none';
+  }
+
   render(){
 
     if (this.props.currentUser === undefined) {
@@ -81,7 +87,7 @@ class Navbar extends React.Component {
                     <Link className="nav-link-item" to="/list">My List</Link>
                   </div>
 
-                  <div className="fa fa-bars hamburger">
+                  <div className="fa fa-bars hamburger" onClick={this.showHamburger}>
                     <div className="ham-nav-links in-hamburger">
                       <Link className="nav-link-item" to="/">Home</Link>
                       <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
