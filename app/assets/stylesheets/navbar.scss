@@ -192,6 +192,8 @@
 
 .show {display: flex;}
 
-@media screen and (max-width: 890px) {
-  
+@media screen and (max-width: 660px) {
+  .hamburger {
+    display: block !important;
+  }
 }
