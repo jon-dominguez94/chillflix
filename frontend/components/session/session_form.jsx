@@ -66,6 +66,18 @@ class SessionForm extends React.Component {
 
   renderDemo() {
     // if(this.props.formType === "Sign In"){
+
+      function fillFields(cb){
+        const email = 'demo@gmail.com';
+        const password = 'password';
+        this.setState({ email: '', password: '' });
+        for(let char of email){
+          this.setState({ email: this.state.email + char });
+        }
+      }
+
+      fillFields = fillFields.bind(this);
+
       return(
         <button 
           onClick={
@@ -76,12 +88,15 @@ class SessionForm extends React.Component {
               document.getElementById("form-label").style.fontSize = "10px";
               document.getElementById("form-label2").style.top = "4px";
               document.getElementById("form-label2").style.fontSize = "10px";
-              this.props.login({email: 'demo@gmail.com', password: 'password'});
-              this.setState({ email: 'demo@gmail.com', password: 'password' });
+              {fillFields()}
+              // this.setState({ email: 'd', password: 'p' });
+              // this.setState({ email: 'demo@gmail.com', password: 'password' });
+              // this.props.login({email: 'demo@gmail.com', password: 'password'});
             }
           } 
           className="form-input form-btn demo-btn" 
-          value="">Demo Login</button>
+          value="">Demo Login
+        </button>
       );
     // }
   }
