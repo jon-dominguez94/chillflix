@@ -56,7 +56,6 @@ class Navbar extends React.Component {
 
   showHamburger(){
     const links = document.getElementsByClassName('in-hamburger')[0];
-    console.log(links.style.display);
     links.style.display = links.style.display === 'none' || links.style.display === ''  ? 'flex' : 'none';
   }
 
