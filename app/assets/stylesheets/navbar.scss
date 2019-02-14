@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.in-hamburger {
+  position: absolute;
+}
+
 .ham-nav-links {
   display: flex;
   flex-direction: column;
@@ -200,5 +204,9 @@
 
   .regular {
     display: none;
+  }
+
+  .nav-items {
+    justify-content: flex-end;
   }
 }
