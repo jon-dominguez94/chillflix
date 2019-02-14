@@ -81,7 +81,7 @@ class Navbar extends React.Component {
                     <Link className="nav-link-item" to="/list">My List</Link>
                   </div>
 
-                  <div className="hamburger">
+                  <div className="fa fa-bars hamburger">
                     <div className="ham-nav-links">
                       <Link className="nav-link-item" to="/">Home</Link>
                       <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>

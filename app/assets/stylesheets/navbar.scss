@@ -13,7 +13,7 @@
 }
 
 .hamburger {
-  display: none;
+  display: none !important;
 }
 
 .ham-nav-links {
@@ -191,3 +191,7 @@
 }
 
 .show {display: flex;}
+
+@media screen and (max-width: 890px) {
+  
+}
