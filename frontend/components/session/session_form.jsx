@@ -68,7 +68,10 @@ class SessionForm extends React.Component {
     // if(this.props.formType === "Sign In"){
 
       function fillEmail(email){
-        if(!email) return;
+        if(!email) {
+          fillPassword('password');
+          return;
+        }
         this.setState({ email: this.state.email + email[0] }, () => {
           setTimeout(() => {
             fillEmail(email.slice(1));
