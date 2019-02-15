@@ -42,8 +42,8 @@ class MainVideo extends React.Component {
   render() {
     return (
       <div className="main-thumb">
-        {/* <div className="main-gif" /> */}
-        <img src={window.oldtn} />
+        <div className="main-gif" />
+        {/* <img src={window.oldtn} /> */}
 
         <div className="main-video-info">
           <h1 className="original main-video-title"><span>Chillflix</span> Original</h1>
