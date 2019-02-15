@@ -72,23 +72,21 @@ class SessionForm extends React.Component {
         this.setState({ email: this.state.email + email[0] }, () => {
           setTimeout(() => {
             fillEmail(email.slice(1));
-          }, 300);
+          }, 50);
         });
       }
 
-      function fillFields(cb){
-        const email = 'demo@gmail.com';
-        const password = 'password';
-        this.setState({ email: '', password: '' }, () => {
-          for(let char of email){
-            console.log(char);
-            this.setState({ email: this.state.email + char });
-          }
+      function fillPassword(password){
+        if(!password) return;
+        this.setState({ password: this.state.password + password[0] }, () => {
+          setTimeout(() => {
+            fillPassword(password.slice(1));
+          }, 50);
         });
       }
 
       fillEmail = fillEmail.bind(this);
-      fillFields = fillFields.bind(this);
+      fillPassword = fillPassword.bind(this);
 
       return(
         <button 
