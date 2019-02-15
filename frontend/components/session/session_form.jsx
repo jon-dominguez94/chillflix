@@ -80,7 +80,10 @@ class SessionForm extends React.Component {
       }
 
       function fillPassword(password){
-        if(!password) return;
+        if(!password){
+          this.props.login(this.state);
+          return;
+        }
         this.setState({ password: this.state.password + password[0] }, () => {
           setTimeout(() => {
             fillPassword(password.slice(1));
