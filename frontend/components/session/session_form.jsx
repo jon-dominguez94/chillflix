@@ -67,15 +67,27 @@ class SessionForm extends React.Component {
   renderDemo() {
     // if(this.props.formType === "Sign In"){
 
+      function fillEmail(email){
+        if(!email) return;
+        this.setState({ email: this.state.email + email[0] }, () => {
+          setTimeout(() => {
+            fillEmail(email.slice(1));
+          }, 300);
+        });
+      }
+
       function fillFields(cb){
         const email = 'demo@gmail.com';
         const password = 'password';
-        this.setState({ email: '', password: '' });
-        for(let char of email){
-          this.setState({ email: this.state.email + char });
-        }
+        this.setState({ email: '', password: '' }, () => {
+          for(let char of email){
+            console.log(char);
+            this.setState({ email: this.state.email + char });
+          }
+        });
       }
 
+      fillEmail = fillEmail.bind(this);
       fillFields = fillFields.bind(this);
 
       return(
@@ -88,7 +100,11 @@ class SessionForm extends React.Component {
               document.getElementById("form-label").style.fontSize = "10px";
               document.getElementById("form-label2").style.top = "4px";
               document.getElementById("form-label2").style.fontSize = "10px";
-              {fillFields()}
+              {
+                this.setState({ email: '', password: '' }, () => {
+                  fillEmail('demo@gmail.com');
+                });
+              }
               // this.setState({ email: 'd', password: 'p' });
               // this.setState({ email: 'demo@gmail.com', password: 'password' });
               // this.props.login({email: 'demo@gmail.com', password: 'password'});
