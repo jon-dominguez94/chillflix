@@ -80,10 +80,10 @@ class Navbar extends React.Component {
                 <div className="nav-items">
 
                   <div className="nav-links regular">
-                    <Link className="nav-link-item" to="/">Home</Link>
-                    <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
-                    <a className="nav-link-item" href="#ComingSoon">Coming Soon</a>
-                    <Link className="nav-link-item" to="/list">My List</Link>
+                    <Link className="nav-link-item noh" to="/">Home</Link>
+                    <a className="nav-link-item noh" href="#RecentlyAdded">Recently Added</a>
+                    <a className="nav-link-item noh" href="#ComingSoon">Coming Soon</a>
+                    <Link className="nav-link-item noh" to="/list">My List</Link>
                   </div>
 
                   <div className="hamburger" onClick={this.showHamburger}><span>Browse</span><i className="fa fa-caret-down"></i>

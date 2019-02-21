@@ -45,15 +45,16 @@
   background: rgba(0,0,0,0.8);
   border-top: 2px solid white;
   margin-top: 40px;
-
+  
   .fa-caret-up {
     position: absolute;
     top: -17px;
     font-size: 22px;
   }
-
+  
   a {
     padding: 20px !important;
+    color: #e5e5e5 !important;
   }
 }
 
@@ -110,8 +111,12 @@
 }
 
 .nav-link-item:active, .nav-link-item:visited, .nav-link-item:hover {
+}
+
+.noh:hover {
   font-weight: bolder;
 }
+
 .session-btn {
   background-color: #e50914;
   line-height: normal;
