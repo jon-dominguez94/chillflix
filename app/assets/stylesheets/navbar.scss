@@ -16,7 +16,7 @@
   display: none !important;
   position: relative;
   font-size: 13px;
-  padding-top: 6px;
+  padding-top: 16px;
   cursor: pointer;
 
   span {
@@ -50,7 +50,7 @@
   width: 260px;
   position: absolute;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  left: -75%;
+  left: -90%;
   display: none;
   background: rgba(0,0,0,0.8);
   border-top: 2px solid white;
@@ -230,7 +230,7 @@
 
 #my-dropdown {
   border: 0.2px solid #333333;
-  background: black;
+  background: rgba(0,0,0,0.8);
 }
 
 #my-dropdown * {
@@ -246,6 +246,7 @@
 
 .drop-item:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 
@@ -269,6 +270,10 @@
 
   .regular {
     display: none;
+  }
+
+  .nav-controls {
+    padding-bottom: 32px;
   }
 
   // .nav-items {
