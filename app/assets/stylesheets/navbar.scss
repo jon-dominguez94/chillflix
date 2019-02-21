@@ -44,11 +44,16 @@
   display: none;
   background: rgba(0,0,0,0.8);
   border-top: 2px solid white;
+  margin-top: 40px;
 
   .fa-caret-up {
     position: absolute;
     top: -17px;
     font-size: 22px;
+  }
+
+  a {
+    padding: 20px !important;
   }
 }
 
