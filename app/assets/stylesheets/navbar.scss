@@ -120,11 +120,11 @@
 .onh {
   width: 100%;
   text-align: center;
-
+  transition: background-color 0.2s linear;
 }
 
 .onh:hover {
-  background: #141414;
+  background: rgba(20, 20, 20, 0.8);
 }
 .session-btn {
   background-color: #e50914;
