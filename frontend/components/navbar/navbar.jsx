@@ -86,7 +86,7 @@ class Navbar extends React.Component {
                     <Link className="nav-link-item" to="/list">My List</Link>
                   </div>
 
-                  <div className="hamburger" onClick={this.showHamburger}>Browse
+                  <div className="hamburger" onClick={this.showHamburger}>Browse<i className="fa fa-caret-down"></i>
                     <div className="ham-nav-links in-hamburger">
                       <Link className="nav-link-item" to="/">Home</Link>
                       <a className="nav-link-item" href="#RecentlyAdded">Recently Added</a>
