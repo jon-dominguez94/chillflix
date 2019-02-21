@@ -51,7 +51,7 @@
   position: absolute;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   left: -75%;
-  // display: none;
+  display: none;
   background: rgba(0,0,0,0.8);
   border-top: 2px solid white;
   // margin-top: 40px;
@@ -71,6 +71,10 @@
   a:active {
     color: #e5e5e5 !important;
   }
+}
+
+.in-hamburger:hover {
+  display: flex;
 }
 
 .nav-controls {
