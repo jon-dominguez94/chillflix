@@ -86,7 +86,8 @@ class Navbar extends React.Component {
                     <Link className="nav-link-item noh" to="/list">My List</Link>
                   </div>
 
-                  <div className="hamburger" onClick={this.showHamburger}><span>Browse</span><i className="fa fa-caret-down"></i>
+                  <div className="hamburger"><span>Browse</span><i className="fa fa-caret-down"></i>
+                  {/* <div className="hamburger" onClick={this.showHamburger}><span>Browse</span><i className="fa fa-caret-down"></i> */}
                     <div className="ham-nav-links in-hamburger">
                       <i className="fa fa-caret-up"></i>
                       <Link className="nav-link-item onh" to="/">Home</Link>

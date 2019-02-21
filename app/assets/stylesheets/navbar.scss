@@ -30,6 +30,12 @@
   }
 }
 
+.hamburger:hover {
+  .in-hamburger {
+    display: flex;
+  }
+}
+
 .ham-nav-links {
   display: flex;
   flex-direction: column;
