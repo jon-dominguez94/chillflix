@@ -44,6 +44,10 @@
   display: none;
   background: rgba(0,0,0,0.8);
   border-top: 2px solid white;
+
+  .fa-caret-up {
+    position: absolute;
+  }
 }
 
 .nav-controls {
