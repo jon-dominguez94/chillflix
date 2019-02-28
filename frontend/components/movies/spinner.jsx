@@ -40,8 +40,7 @@ class Spinner extends React.Component {
   }
 
   scroll(direction) {
-    let newMovies = Array.from(this.props.movies);
-    // let newMovies = Array.from(this.state.movies);
+    let newMovies = Array.from(this.state.movies);
     if(direction === "left"){
       newMovies.push(newMovies.shift());
       newMovies.push(newMovies.shift());
@@ -64,8 +63,7 @@ class Spinner extends React.Component {
         <div id={`scaler-${this.props.order}`} className="tn-scale">
 
           <div className="tn-wrapper">
-            {this.props.movies}
-            {/* {this.state.movies} */}
+            {this.state.movies}
           </div>
 
         </div>
