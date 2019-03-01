@@ -62,9 +62,15 @@ class Spinner extends React.Component {
         
         <div id={`scaler-${this.props.order}`} className="tn-scale">
 
-          <div className="tn-wrapper">
+          {/* <div className="tn-wrapper"> */}
+            <CSSTransitionGroup
+              transitionName="example"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}
+              className="tn-wrapper">
             {this.state.movies}
-          </div>
+            </CSSTransitionGroup>
+          {/* </div> */}
 
         </div>
         
