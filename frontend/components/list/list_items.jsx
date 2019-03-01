@@ -66,7 +66,7 @@ class ListItems extends React.Component {
             <CSSTransitionGroup
               transitionName="example"
               transitionEnterTimeout={500}
-              transitionLeaveTimeout={300}
+              transitionLeaveTimeout={500}
               className="search-results-container for-list">
               {filtered}
             </CSSTransitionGroup>

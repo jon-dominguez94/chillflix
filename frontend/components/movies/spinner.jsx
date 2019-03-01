@@ -67,7 +67,7 @@ class Spinner extends React.Component {
             <CSSTransitionGroup
               transitionName="example"
               transitionEnterTimeout={500}
-              transitionLeaveTimeout={300}
+              transitionLeaveTimeout={500}
               className="tn-wrapper">
             {this.state.movies}
             </CSSTransitionGroup>
