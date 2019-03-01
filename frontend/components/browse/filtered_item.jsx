@@ -6,7 +6,6 @@ class FilteredItem extends React.Component {
     super(props);
     
     this.updateItem = this.updateItem.bind(this);
-    // debugger
   }
 
   renderList(){
