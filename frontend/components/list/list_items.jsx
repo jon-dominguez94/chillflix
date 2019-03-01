@@ -1,5 +1,6 @@
 import React from 'react';
 import FilteredItem from '../browse/filtered_item_container';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class ListItems extends React.Component {
   constructor(props) {
