@@ -63,7 +63,13 @@ class ListItems extends React.Component {
             My List
           </div>
           <div className="search-results-container for-list">
-            {filtered}
+            <CSSTransitionGroup
+              transitionName="example"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}>
+              {filtered}
+            </CSSTransitionGroup>
+            {/* {filtered} */}
           </div>
         </div>
       );
