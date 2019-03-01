@@ -62,15 +62,16 @@ class ListItems extends React.Component {
           <div className="list-header">
             My List
           </div>
-          <div className="search-results-container for-list">
+          {/* <div className="search-results-container for-list"> */}
             <CSSTransitionGroup
               transitionName="example"
               transitionEnterTimeout={500}
-              transitionLeaveTimeout={300}>
+              transitionLeaveTimeout={300}
+              className="search-results-container for-list">
               {filtered}
             </CSSTransitionGroup>
+          {/* </div> */}
             {/* {filtered} */}
-          </div>
         </div>
       );
     }
