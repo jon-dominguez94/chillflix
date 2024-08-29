@@ -32,7 +32,7 @@ export const createListItem = data => dispatch => {
   return APIUtils.createListItem(data)
   .then(
       list_item => dispatch(receiveListItem(list_item))
-  );
+    );
 };
 
 export const deleteListItem = id => dispatch => {
