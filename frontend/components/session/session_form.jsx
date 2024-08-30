@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
       fillPassword = fillPassword.bind(this);
 
       return(
-        <button 
+        <button
           onClick={
             (e) => {
               e.preventDefault();
@@ -113,8 +113,8 @@ class SessionForm extends React.Component {
               // this.setState({ email: 'demo@gmail.com', password: 'password' });
               // this.props.login({email: 'demo@gmail.com', password: 'password'});
             }
-          } 
-          className="form-input form-btn demo-btn" 
+          }
+          className="form-input form-btn demo-btn"
           value="">Demo Login
         </button>
       );
@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
 
   render() {
 
-  
+
 
     return(
       <div className="splash-container with-form">
@@ -139,7 +139,7 @@ class SessionForm extends React.Component {
               <form className="session-form" onSubmit={(e) => this.handleSubmit(e)}>
                <div className="form-info">
                   <p className="form-header">{this.props.formType} </p>
-                
+
 
                   <div className="form-inputs">
                     <div className="form-input form-text">
@@ -156,18 +156,21 @@ class SessionForm extends React.Component {
                       </label>
                       <input type="password" value={this.state.password} onChange={this.update("password", "form-label2")} />
                     </div>
-                    
+
                     <button className="form-input form-btn" value={this.props.formType}>{this.props.formType}</button>
                     {this.renderDemo()}
-                    
+
+
+                    <h2 className="heroku-disclaimer">Due to heroku changes, this project may not be fully operational at the moment</h2>
+
                       {this.renderErrors()}
-                    
+
                   </div>
                   {this.renderRedirect()}
                 </div>
               </form>
             </section>
-            
+
           </section>
         </div>
 
