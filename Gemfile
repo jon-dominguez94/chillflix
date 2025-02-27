@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '3.1.0'
 require 'open-uri'
 gem 'aws-sdk-s3'
 
@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'ez_download', '~> 0.2.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
