@@ -152,7 +152,6 @@ GEM
     drb (2.2.1)
     erubi (1.13.1)
     execjs (2.10.0)
-    ffi (1.17.1)
     ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x86_64-darwin)
     globalid (1.2.1)
@@ -189,7 +188,6 @@ GEM
     matrix (0.4.2)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.25.4)
     msgpack (1.8.0)
     mutex_m (0.3.0)
@@ -203,9 +201,6 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.3)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.3-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.3-x86_64-darwin)
@@ -223,7 +218,8 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (3.12.6)
+    puma (6.6.0)
+      nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.10)
     rack-session (2.1.0)
@@ -309,7 +305,6 @@ GEM
 PLATFORMS
   arm64-darwin
   x86_64-darwin
-  x86_64-linux
 
 DEPENDENCIES
   annotate
@@ -328,7 +323,7 @@ DEPENDENCIES
   mimemagic!
   pg (>= 0.18, < 2.0)
   pry-rails
-  puma (~> 3.11)
+  puma (~> 6.6.0)
   rails (~> 7.1.0)
   selenium-webdriver
   spring
