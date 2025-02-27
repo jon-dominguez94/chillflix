@@ -15,6 +15,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.12.6'
 # gem 'puma', '~> 3.11'
 # gem 'puma', '~> 3.1.5'
+gem 'rack', '= 2.2.4'
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
