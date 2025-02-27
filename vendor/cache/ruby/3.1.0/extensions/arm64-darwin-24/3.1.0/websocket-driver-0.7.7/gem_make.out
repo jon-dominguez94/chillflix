@@ -1,0 +1,15 @@
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+/Users/jondominguez/.rbenv/versions/3.1.0/bin/ruby -I /Users/jondominguez/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20250227-32941-gouc8o.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20250227-32941-fidn70

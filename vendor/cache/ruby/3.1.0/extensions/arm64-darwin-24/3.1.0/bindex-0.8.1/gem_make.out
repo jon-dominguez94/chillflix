@@ -1,0 +1,15 @@
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/jondominguez/.rbenv/versions/3.1.0/bin/ruby -I /Users/jondominguez/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20250227-32941-a1dbtz.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20250227-32941-2cuy2b/skiptrace/internal

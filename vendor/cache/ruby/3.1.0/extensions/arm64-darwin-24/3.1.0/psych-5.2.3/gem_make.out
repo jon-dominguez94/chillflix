@@ -1,0 +1,25 @@
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/psych-5.2.3/ext/psych
+/Users/jondominguez/.rbenv/versions/3.1.0/bin/ruby -I /Users/jondominguez/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20250227-32941-7ojic6.rb extconf.rb
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/psych-5.2.3/ext/psych
+make DESTDIR\= clean
+cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
+/bin/sh: line 0: cd: libyaml: No such file or directory
+make: [clean-so] Error 1 (ignored)
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/psych-5.2.3/ext/psych
+make DESTDIR\=
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.bundle
+ld: warning: ignoring duplicate libraries: '-lyaml'
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/psych-5.2.3/ext/psych
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20250227-32941-43mpg6

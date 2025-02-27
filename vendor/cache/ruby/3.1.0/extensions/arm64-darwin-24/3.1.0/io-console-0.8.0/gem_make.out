@@ -1,0 +1,28 @@
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/io-console-0.8.0/ext/io/console
+/Users/jondominguez/.rbenv/versions/3.1.0/bin/ruby -I /Users/jondominguez/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20250227-32941-2w40jr.rb extconf.rb
+checking for rb_syserr_fail_str(0, Qnil)... yes
+checking for rb_interned_str_cstr()... yes
+checking for rb_io_path()... no
+checking for rb_io_descriptor()... yes
+checking for rb_io_get_write_io()... yes
+checking for rb_io_closed_p()... no
+checking for rb_io_open_descriptor()... no
+checking for rb_ractor_local_storage_value_newkey()... yes
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+checking for ttyname_r()... yes
+creating Makefile
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/io-console-0.8.0/ext/io/console
+make DESTDIR\= clean
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/io-console-0.8.0/ext/io/console
+make DESTDIR\=
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/io-console-0.8.0/ext/io/console
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20250227-32941-fl8e6d/io

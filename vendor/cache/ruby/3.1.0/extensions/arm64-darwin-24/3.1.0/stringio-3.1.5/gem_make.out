@@ -1,0 +1,15 @@
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/stringio-3.1.5/ext/stringio
+/Users/jondominguez/.rbenv/versions/3.1.0/bin/ruby -I /Users/jondominguez/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20250227-32941-3kcbzl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= clean
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/jondominguez/Desktop/chillflix-2024/chillflix/vendor/cache/ruby/3.1.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20250227-32941-k6cb7l
