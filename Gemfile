@@ -6,6 +6,7 @@ require 'open-uri'
 gem 'aws-sdk-s3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem "sprockets-rails", ">= 3.4.1"
 # gem 'rails', '~> 5.2.2'
 gem 'rails', '~> 7.1.0'
 # Use postgresql as the database for Active Record
