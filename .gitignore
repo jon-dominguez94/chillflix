@@ -64,6 +64,7 @@ Temporary Items
 ## Environment normalisation:
 /.bundle/
 /vendor/bundle
+/vendor/cache
 /lib/bundler/man/
 
 
