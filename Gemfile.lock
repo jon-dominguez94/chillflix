@@ -115,7 +115,6 @@ GEM
     execjs (2.10.0)
     ez_download (0.2.0)
       rails (~> 5.2.0)
-    ffi (1.17.1)
     ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x86_64-darwin)
     globalid (1.1.0)
@@ -147,7 +146,6 @@ GEM
     matrix (0.4.2)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.25.4)
     msgpack (1.8.0)
     net-imap (0.5.6)
@@ -160,9 +158,6 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.3)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.3-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.3-x86_64-darwin)
@@ -253,7 +248,6 @@ GEM
 PLATFORMS
   arm64-darwin
   x86_64-darwin
-  x86_64-linux
 
 DEPENDENCIES
   annotate
