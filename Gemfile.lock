@@ -329,7 +329,7 @@ DEPENDENCIES
   mimemagic!
   pg (>= 0.18, < 2.0)
   pry-rails
-  puma
+  puma (~> 3.1.5)
   rails (~> 7.1.0)
   selenium-webdriver
   spring
