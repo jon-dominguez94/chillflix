@@ -223,8 +223,7 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (6.6.0)
-      nio4r (~> 2.0)
+    puma (3.12.6)
     racc (1.8.1)
     rack (3.1.10)
     rack-session (2.1.0)
@@ -329,7 +328,7 @@ DEPENDENCIES
   mimemagic!
   pg (>= 0.18, < 2.0)
   pry-rails
-  puma (~> 6.6.0)
+  puma (~> 3.11)
   rails (~> 7.1.0)
   selenium-webdriver
   spring
